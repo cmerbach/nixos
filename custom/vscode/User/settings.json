@@ -1,0 +1,157 @@
+{
+     // Settings
+          "editor.rulers": [80],
+          "editor.tabSize": 4,
+          "editor.insertSpaces": true,
+          "editor.detectIndentation": false,
+        //   "cSpell.language": "en,de,de-DE",
+          "editor.wordWrap": "off",
+          "editor.showFoldingControls": "always",
+          "editor.foldingStrategy": "indentation",
+          "window.titleBarStyle": "custom",
+          "latex-workshop.message.warning.show": false,
+          "workbench.colorCustomizations":
+               {
+                    "statusBar.noFolderBackground": "#007acd"
+               },
+     // Latex
+          //"latex-workshop.docker.image.latex": "software_texlive",
+          //"latex-workshop.docker.enabled": true,
+          "latex-workshop.view.pdf.viewer": "tab",
+          "latex-workshop.latex.outDir": "./tmp",
+          "latex-workshop.latex.autoBuild.run": "never",
+          "latex-workshop.latex.tools":
+               [
+                    {
+                         "name": "latexmk",
+                         "command": "latexmk",
+                         "args":
+                              [
+                                   "-synctex=1",
+                                   "-interaction=nonstopmode",
+                                   "-shell-escape",
+                                   "-file-line-error",
+                                   "-pdflatex",
+                                   "-aux-directory=./tmp",
+                                   "-output-directory=./tmp",
+                                   "%DOC%"
+                              ]
+                    },
+                    {
+                         "name": "pdflatex",
+                         "command": "pdflatex",
+                         "args":
+                              [
+                                   "-synctex=1",
+                                   "-interaction=nonstopmode",
+                                   "-shell-escape",
+                                   "-file-line-error",
+                                   "-aux-directory=./tmp",
+                                   "-output-directory=./tmp",
+                                   "%DOC%"
+                              ]
+                    },
+                    {
+                         "name": "bibtex",
+                         "command": "bibtex",
+                         "args":
+                              [
+                                   "%DOCFILE%"
+                              ]
+                    }
+            ],
+            "[python]": {
+                "editor.formatOnType": true
+            },
+            "workbench.startupEditor": "none",
+            "bracket-pair-colorizer-2.depreciation-notice": false,
+          // "latex-workshop.latex.autoClean.run": "onBuilt",
+          // "latex-workshop.latex.clean.fileTypes":
+               // [
+                    // "*.post",
+                    // "*.acn",
+                    // "*.acr",
+                    // "*.alg",
+                    // "*.auto",
+                    // "*.aux",
+                    // "*.auxlock",
+                    // "*.bbl",
+                    // "*.bcf",
+                    // "*.blg",
+                    // "*.brf",
+                    // "*.dat",
+                    // "*.dep",
+                    // "*.div",
+                    // "*.dpth",
+                    // "*.fdb_latexmk",
+                    // "*.fls",
+                    // "*.glg",
+                    // "*.glo",
+                    // "*.gls",
+                    // "*gnuplottex-fig*",
+                    // "*.gnuploterrors",
+                    // "*.gz",
+                    // "*.idx",
+                    // "*.ind",
+                    // "*figure*.pdf",
+                    // "*.ist",
+                    // "*.lof",
+                    // "*.log",
+                    // "*.lor",
+                    // "*.lot",
+                    // "*.md5",
+                    // "*.nav",
+                    // "*.out",
+                    // "*.snm",
+                    // "*.toc",
+                    // "*.vrb",
+                    // "*.xml"
+               // ],
+     // Other
+
+          "python.venvFolders": [
+            "~/.cache/pypoetry/virtualenvs"
+            ],
+            "jupyter.askForKernelRestart": false,
+            "vscode-pets.petSize": "medium",
+            "git.confirmSync": false,
+            "workbench.colorTheme": "Visual Studio Dark",
+            "notebook.output.scrolling": true,
+            "git.suggestSmartCommit": false,
+            "terminal.integrated.enableMultiLinePasteWarning": false,
+            "files.exclude": {
+                "**/.git": false
+            },
+            "markdown-preview-enhanced.mermaidTheme": "dark",
+            "markdown-preview-github-styles.lightTheme": "dark",
+            "markdown-preview-enhanced.previewTheme": "github-dark.css",
+            "todo-tree.highlights.defaultHighlight": {
+                "foreground": "green",
+                
+            },
+            "todo-tree.general.tags": [
+                "BUG",
+                "PROGRESS",
+                "FIXME",
+                "TODO"
+            ],
+            "todo-tree.highlights.customHighlight": {
+                "BUG": {
+                    "icon": "bug"
+                },
+                "PROGRESS": {
+                    "icon": "tools"
+                },
+                "FIXME": {
+                    "icon": "flame"
+                },
+                    // "icon": "x"
+                    // "icon": "issue-draft"
+                    // "icon": "issue-closed"
+            },
+            "kanban.saveFiles.pathPreferences": [
+                "/home/user/kanban.json"
+            ],
+
+
+ }

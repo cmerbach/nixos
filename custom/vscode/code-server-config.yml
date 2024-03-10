@@ -1,0 +1,7 @@
+bind-addr: 127.0.0.1:31545
+auth: none
+# auth: password
+# hashed-password: "$argon2i$v=19$m=4096,t=3,p=1$c29tZXNhbHQ$Svn7p3Avw89f/LMihHSeoOCTuM/brLAB0sZprk2hR1k" # echo -n "Passwort" | argon2 somesalt -t 3 -m 12 -p 1 -l 32 -e
+# password: password
+user-data-dir: "/home/user/nixos/custom/vscode/"
+cert: true
