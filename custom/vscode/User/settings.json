@@ -118,7 +118,7 @@
             "workbench.colorTheme": "Visual Studio Dark",
             "notebook.output.scrolling": true,
             "git.suggestSmartCommit": false,
-            "terminal.integrated.enableMultiLinePasteWarning": false,
+            "terminal.integrated.enableMultiLinePasteWarning": "never",
             "files.exclude": {
                 "**/.git": false
             },
@@ -126,7 +126,7 @@
             "markdown-preview-github-styles.lightTheme": "dark",
             "markdown-preview-enhanced.previewTheme": "github-dark.css",
             "todo-tree.highlights.defaultHighlight": {
-                "foreground": "green",
+                "foreground": "#1bb107aa",
                 
             },
             "todo-tree.general.tags": [

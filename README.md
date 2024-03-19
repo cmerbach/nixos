@@ -40,7 +40,7 @@ qemu-system-x86_64 -enable-kvm -hda tmp/nixos.img -smp 8 -m 16G -nic user,hostfw
 git clone https://github.com/cmerbach/nixos.git && cd nixos && chmod +x update.sh && ./update.sh
 
 # set repo to ssh
-cd && cd nixos/ && git remote set-url git@github.com:cmerbach/nixos.git
+cd && cd nixos/ && git remote set-url origin git@github.com:cmerbach/nixos.git
 ```
 
 <br>
@@ -95,11 +95,13 @@ networking.useDHCP = lib.mkDefault true;
 ---
 
 ### Open questions:
+- [ ] write a function that vscode-server FILE will open browser
 - [ ] copy full disk encryption to yubikey 
 - [ ] how to enable fulldisk encryption on rpz2w
 - [ ] search for a customizable terminal
 - [ ] save ui layout of vscode
 - [ ] remove ceph config from repo and flake.nix
+- [ ] customize shell extensions over gnome.dconf.editor
 
 ---
 

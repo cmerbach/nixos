@@ -15,6 +15,7 @@
         mpv # free media player for the command line
         nnn # full-featured terminal file manager
         nomacs # free and open source image viewer
+        p7zip # command line tool fork of the free 7-zip archive program for posix platforms
         pcmanfm # file manager with gtk interface
         pdfarranger # python-gtk application to merge or split PDF documents
         python3 # universal, interpreted, high-level programming language

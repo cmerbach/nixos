@@ -6,6 +6,8 @@
     # users.users.user = {
     #     packages = with pkgs; [
     #         brave
+    #         skypeforlinux
+    #         telegram-desktop
     #     ];
     # };
 }

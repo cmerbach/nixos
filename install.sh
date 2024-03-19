@@ -17,7 +17,7 @@ echo "y" | ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
 sshpass -p "pwinit" ssh-copy-id -o StrictHostKeyChecking=no root@127.0.0.1
 
 # download repo
-git clone https://github.com/cmerbach/nixos.git && cd nixos
+git clone https://github.com/cmerbach/nixos.git && cd nixos/
 
 # user input to change the install device
 lsblk && echo -n "Choose device for install: " && read -r device

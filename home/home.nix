@@ -50,6 +50,7 @@
         };
         "org/gnome/desktop/interface" ={
             gtk-theme = "Adwaita-dark";
+            show-battery-percentage = true;
         };
         "org/gnome/settings-daemon/plugins/power" = {
             idle-dim = false;
@@ -62,8 +63,11 @@
             enabled-extensions = [
                 "executor@raujonas.github.io"
                 "ddterm@amezin.github.com"
+                "trayIconsReloaded@selfmade.pl"
+                "pano@elhan.io" 
+                "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "pcmanfm.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "lorien.desktop" ];
+            favorite-apps = [ "pcmanfm.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
@@ -71,6 +75,7 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -93,6 +98,11 @@
             command = "firefox --new-window https://127.0.0.1:31545 --kiosk";
             binding = "<Ctrl><SUPER>v";
         };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+            name = "flameshot";
+            command = "flameshot gui";
+            binding = "<SHIFT><Ctrl><ALT>f";
+        };
     };
 
     # bashrc
@@ -113,9 +123,11 @@
             }
         '';
 
-        # bashrcExtra = ''
-        #  export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-        # '';
+        bashrcExtra = ''
+        # example
+        # export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+        eval "$(direnv hook bash)"
+        '';
     };
 
     programs.git = {
@@ -132,6 +144,12 @@
             Host github.com
                 HostName github.com
                 IdentityFile ~/.ssh/id_github
+                IdentitiesOnly yes
+
+        AddKeysToAgent yes
+            Host gitlab.com
+                HostName gitlab.com
+                IdentityFile ~/.ssh/id_gitlab
                 IdentitiesOnly yes
 	    '';
     };

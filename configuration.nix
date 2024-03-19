@@ -68,6 +68,13 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = false;
     services.xserver.desktopManager.gnome.enable = true;
+    # enable displaylink and the usage of monitors via displayport
+    # ---(pre install steps)---
+    # wget https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip -O ~/nixos/tmp/displaylink-580.zip
+    # nix-prefetch-url file://~/nixos/tmp/displaylink-580.zip
+    # sudo systemctl start dlm.service
+    # ---
+    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
     # disable pre-installed gnome packages
     environment.gnome.excludePackages = with pkgs.gnome ; [
         gnome-calculator

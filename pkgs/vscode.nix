@@ -23,6 +23,7 @@
 
                 # install and update all extensions
                 /home/user/.local/bin/code-server --config "/home/user/nixos/custom/vscode/code-server-config.yml" \
+                    --install-extension assisrMatheus.sidebar-markdown-notes --force \
                     --install-extension bbenoist.nix --force \
                     --install-extension foam.foam-vscode --force \
                     --install-extension github.vscode-pull-request-github --force \

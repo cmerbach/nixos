@@ -19,15 +19,15 @@
         "command": "editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
     },
-    {
-        "key": "ctrl+c",
-        "command": "workbench.action.terminal.copySelection", "when": "terminalFocus && terminalTextSelected"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "workbench.action.terminal.paste",
-        "when": "terminalFocus"
-    },
+    // {
+    //     "key": "ctrl+c",
+    //     "command": "workbench.action.terminal.copySelection", "when": "terminalFocus && terminalTextSelected"
+    // },
+    // {
+    //     "key": "ctrl+v",
+    //     "command": "workbench.action.terminal.paste",
+    //     "when": "terminalFocus"
+    // },
     {
         "key": "ctrl+alt+e",
         "command": "workbench.action.terminal.toggleTerminal"
