@@ -18,7 +18,7 @@
     # The home.packages option allows you to install Nix packages into your
     # environment.
 
-    imports = with pkgs; [
+    imports = [
         ../pkgs/additional.nix
         ../pkgs/base.nix
         ../pkgs/exb.nix
@@ -65,9 +65,9 @@
                 "ddterm@amezin.github.com"
                 "trayIconsReloaded@selfmade.pl"
                 "pano@elhan.io" 
-                "forge@jmmaranan.com"
+                # "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "pcmanfm.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
+            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
@@ -112,7 +112,8 @@
 
         # set some aliases
         shellAliases = {
-            nr = "git -C  /home/user/nixos/ add .&& sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nr = "git -C  /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos/' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
         };
 

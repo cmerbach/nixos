@@ -4,6 +4,7 @@
 # this options will set in the update.sh file
 
 tmp/
+result/
 
 # ---( vscode )---
 

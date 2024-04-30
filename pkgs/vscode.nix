@@ -28,6 +28,7 @@
                     --install-extension foam.foam-vscode --force \
                     --install-extension github.vscode-pull-request-github --force \
                     --install-extension gruntfuggly.todo-tree --force \
+                    --install-extension HashiCorp.terraform --force \
                     --install-extension james-yu.latex-workshop --force \
                     --install-extension janisdd.vscode-edit-csv --force \
                     --install-extension johnpapa.vscode-peacock --force \

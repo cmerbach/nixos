@@ -7,6 +7,7 @@
         ffmpeg # free and open-source software consisting of a suite of libraries for video, audio, and other multimedia files
         flameshot # free and open-source tool to take screenshots with many built-in features 
         gimp # cross-platform image editor
+        gzip # gnu zip compression program
         htop # cross-platform interactive process viewe
         iftop # cli system monitor toolfor network traffic
         kdenlive # free and open source cross-platform video editing program
@@ -16,7 +17,6 @@
         nnn # full-featured terminal file manager
         nomacs # free and open source image viewer
         p7zip # command line tool fork of the free 7-zip archive program for posix platforms
-        pcmanfm # file manager with gtk interface
         pdfarranger # python-gtk application to merge or split PDF documents
         python3 # universal, interpreted, high-level programming language
             python311Packages.duckdb

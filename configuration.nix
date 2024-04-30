@@ -2,22 +2,23 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 {
-    imports =
-        [ # Include the results of the hardware scan.
-            # ./hardware-configuration.nix
-            ./host.local.nix
-            ./pkgs/firefox.nix
-            ./pkgs/vscode.nix
-            ./pkgs/virtualization.nix
-        ];
+    imports = [
+        # Include the results of the hardware scan.
+        # ./hardware-configuration.nix
+        ./host.local.nix
+        ./pkgs/firefox.nix
+        ./pkgs/vscode.nix
+        ./pkgs/virtualization.nix
+    ];
 
     # enable flakes command
     nix.settings.experimental-features = [ "nix-command flakes" ];
     # enable unfree software
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowBroken = true;
     # enable all firmware regardless of license
     hardware.enableAllFirmware = true;
     # allow insecure software
@@ -29,8 +30,8 @@
     boot.loader.grub.enable = true;
     boot.loader.grub.efiSupport = true;
     boot.loader.grub.efiInstallAsRemovable = true;
-    boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_5;
-    # boot.kernelPackages = pkgs.linuxPackages_latest;
+    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_5;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.binfmt.emulatedSystems = [ "aarch64-linux" ]; # https://github.com/plmercereau/nixos-pi-zero-2
     # boot.loader.efi.efiSysMountPoint = "/boot/efi";
     # Define on which hard drive you want to install Grub.
@@ -70,13 +71,13 @@
     services.xserver.desktopManager.gnome.enable = true;
     # enable displaylink and the usage of monitors via displayport
     # ---(pre install steps)---
-    # wget https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip -O ~/nixos/tmp/displaylink-580.zip
-    # nix-prefetch-url file://~/nixos/tmp/displaylink-580.zip
+    # nix-prefetch-url --name displaylink-580.zip https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip
     # sudo systemctl start dlm.service
+    # -----
+    # services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
     # ---
-    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
     # disable pre-installed gnome packages
-    environment.gnome.excludePackages = with pkgs.gnome ; [
+    environment.gnome.excludePackages = with pkgs.gnome; [
         gnome-calculator
         gnome-calendar
         gnome-characters
@@ -93,7 +94,6 @@
         epiphany    # web browser
         geary       # email client
         gnome-tour  # simple introduction for gnome
-        nautilus    # file manager
         seahorse    # password managergnome
         simple-scan # document scanner
         totem       # video player
@@ -125,7 +125,16 @@
 
     # Enable sound.
     sound.enable = true;
-    hardware.pulseaudio.enable = true;
+    # hardware.pulseaudio.enable = true;
+    # Enable sound with pipewire.
+    hardware.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+    };
 
     # Enable touchpad support (enabled default in most desktopManager)
     services.xserver.libinput.enable = true;
@@ -135,7 +144,11 @@
         isNormalUser = true;
         description = "user"; # managed by home-manager
         hashedPassword = "$6$U3SyXldxX47qXKo9$7IUNCifC7iZp7O6ldKA6gbMtsIuTG0XG0EBKErBD.uURbZ4fbqUgni0SbzlgXXP4phTJuDlh5VEki0HmHwxYs/"; # mkpasswd --method=SHA-512 --stdin
-        extraGroups = [ "networkmanager" "wheel" ]; #  wheel - enables 'sudo' for the user
+        extraGroups = [
+            "dialout" # arduino permission for /dev/ttyUSB0
+            "networkmanager"
+            "wheel" # enables 'sudo' for the user
+        ]; 
         packages = with pkgs; [
             firefox-esr
         ];

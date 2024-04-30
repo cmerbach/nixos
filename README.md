@@ -115,7 +115,7 @@ Original: https://github.com/plmercereau/nixos-pi-zero-2.git
 nix build -L /home/user/nixos/rpz2w#nixosConfigurations.zero2w.config.system.build.sdImage
 
 # copy image to device/sdcard
-sudo dd if=rpz2w.img of=/dev/sda status=progress
+cd /home/user/nixos/rpz2w/result/sd-image && sudo dd if=rpz2w.img of=/dev/sda status=progress
 
 # login to raspi
 ssh-keygen -f "/home/user/.ssh/known_hosts" -R "192.168.178.31" && \

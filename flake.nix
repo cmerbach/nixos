@@ -3,18 +3,26 @@
     
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+        # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
         disko.url = "github:nix-community/disko";
         home-manager = {
             url = "github:nix-community/home-manager/release-23.11";
             inputs.nixpkgs.follows = "nixpkgs";
+            inputs.unstable.follows = "nixpkgs-unstable";
         };
-        # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    outputs = inputs@{ self, nixpkgs, disko, home-manager, ... }: {
-        nixosConfigurations.full = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs; };
+    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, disko, home-manager, ... }:
+    let
+        lib = nixpkgs.lib;
+        system = "x86_64-linux";
+        # Info: https://discourse.nixos.org/t/how-to-allow-unfree-for-unstable-packages/43600/4
+        unstable = import nixpkgs-unstable {inherit system; config.allowUnfree = true; };
+    in {
+        nixosConfigurations.full = lib.nixosSystem {
+            inherit system;
+            specialArgs = { inherit inputs unstable; };
             modules = [
                 disko.nixosModules.disko
                 ./disko.nix
@@ -23,8 +31,8 @@
             ];
         };
 
-        nixosConfigurations.minimal = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
+        nixosConfigurations.minimal = lib.nixosSystem {
+            inherit system;
             specialArgs = { inherit inputs; };
             modules = [
                 disko.nixosModules.disko
@@ -33,8 +41,8 @@
             ];
         };
 
-        nixosConfigurations.ceph = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
+        nixosConfigurations.ceph = lib.nixosSystem {
+            inherit system;
             specialArgs = { inherit inputs; };
             modules = [
                 disko.nixosModules.disko

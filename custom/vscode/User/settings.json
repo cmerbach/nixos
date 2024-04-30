@@ -152,6 +152,9 @@
             "kanban.saveFiles.pathPreferences": [
                 "/home/user/kanban.json"
             ],
-
+            "remote.autoForwardPortsSource": "hybrid",
+            "editor.copyWithSyntaxHighlighting": false,
+            "editor.emptySelectionClipboard": false,
+            "editor.selectionClipboard": false,
 
  }

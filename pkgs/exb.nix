@@ -7,7 +7,7 @@
         direnv # shell extension that manages your environment
         docker# build, share, and run container applications
         grafana # open source analytics & monitoring solution for every database
-        helm # package manager for kubernetes
+        kubernetes-helm # package manager for kubernetes
         k9s # terminal UI to interact with your Kubernetes clusters
         kubectl # command line tool for communicating with a kubernetes cluster
         kubectx # tool to switch between contexts (clusters) on kubectl faster
