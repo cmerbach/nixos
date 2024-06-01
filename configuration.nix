@@ -10,8 +10,8 @@
         # ./hardware-configuration.nix
         ./host.local.nix
         ./pkgs/firefox.nix
-        ./pkgs/vscode.nix
         ./pkgs/virtualization.nix
+        ./legacy/vscode-legacy.nix # legacy -> https://127.0.0.1:31545/
     ];
 
     # enable flakes command
@@ -146,11 +146,13 @@
         hashedPassword = "$6$U3SyXldxX47qXKo9$7IUNCifC7iZp7O6ldKA6gbMtsIuTG0XG0EBKErBD.uURbZ4fbqUgni0SbzlgXXP4phTJuDlh5VEki0HmHwxYs/"; # mkpasswd --method=SHA-512 --stdin
         extraGroups = [
             "dialout" # arduino permission for /dev/ttyUSB0
+            "docker"
+            "libvirtd"
             "networkmanager"
             "wheel" # enables 'sudo' for the user
         ]; 
         packages = with pkgs; [
-            firefox-esr
+            firefox
         ];
     };
 
@@ -162,13 +164,31 @@
         openssl
     ];
 
+    # libvirtd service
+    virtualisation.libvirtd = {
+        enable = true;
+        qemu = {
+            package = pkgs.qemu_kvm;
+            runAsRoot = true;
+            swtpm.enable = true;
+            ovmf = {
+                enable = true;
+                packages = [(pkgs.OVMF.override {
+                    secureBoot = true;
+                    tpmSupport = true;
+                }).fd];
+            };
+        };
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
+    programs.gnupg.agent = {
+        enable = true;
+        pinentryFlavor = "gtk2";
+        enableSSHSupport = true;
+    };
 
     # List services that you want to enable:
 

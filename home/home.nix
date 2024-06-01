@@ -22,6 +22,7 @@
         ../pkgs/additional.nix
         ../pkgs/base.nix
         ../pkgs/exb.nix
+        ../pkgs/vscodium.nix
     ];
 
     home.packages = with pkgs; [
@@ -67,7 +68,7 @@
                 "pano@elhan.io" 
                 # "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
+            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "thunderbird.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
@@ -75,7 +76,8 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -89,20 +91,25 @@
             binding = "<Ctrl><Alt>t";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-            name = "vscode-tab";
-            command = "firefox --new-window https://127.0.0.1:31545";
-            binding = "<Ctrl><Alt>v";
+            name = "thunderbird";
+            command = "thunderbird";
+            binding = "<Ctrl><SHIFT><Alt>t";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-            name = "vscode-kiosk";
-            command = "firefox --new-window https://127.0.0.1:31545 --kiosk";
-            binding = "<Ctrl><SUPER>v";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
             name = "flameshot";
             command = "flameshot gui";
             binding = "<SHIFT><Ctrl><ALT>f";
         };
+        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+        #     name = "vscode-tab";
+        #     command = "firefox --new-window https://127.0.0.1:31545";
+        #     binding = "<Ctrl><Alt>v";
+        # };
+        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+        #     name = "vscode-kiosk";
+        #     command = "firefox --new-window https://127.0.0.1:31545 --kiosk";
+        #     binding = "<Ctrl><SUPER>v";
+        # };
     };
 
     # bashrc
@@ -113,8 +120,9 @@
         # set some aliases
         shellAliases = {
             nr = "git -C  /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
-            nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos/' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
+            nn = "docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n";
         };
 
         # some bash functions
@@ -184,6 +192,10 @@
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
+
+    # NOTE required when working with binary-python-packages without poetry2nix
+    home.sessionVariables.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+    home.sessionVariables.PDM_VENV_BACKEND = "venv";
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;

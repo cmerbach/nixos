@@ -40,15 +40,5 @@
                 ./minimal.nix 
             ];
         };
-
-        nixosConfigurations.ceph = lib.nixosSystem {
-            inherit system;
-            specialArgs = { inherit inputs; };
-            modules = [
-                disko.nixosModules.disko
-                ./disko.nix
-                ./ceph.nix 
-            ];
-        };
     };
 }

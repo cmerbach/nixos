@@ -32,6 +32,7 @@
                     --install-extension james-yu.latex-workshop --force \
                     --install-extension janisdd.vscode-edit-csv --force \
                     --install-extension johnpapa.vscode-peacock --force \
+                    --install-extension marcostazi.VS-code-vagrantfile --force \
                     --install-extension mhutchie.git-graph --force \
                     --install-extension ms-python.python --force \
                     --install-extension ms-toolsai.jupyter --force \

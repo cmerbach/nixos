@@ -1,10 +1,14 @@
-# host.local.nix
-# -> git add --intent-to-add host.local.nix
-# -> git update-index --assume-unchanged host.local.nix
+# host.local.nix and flake.lock
+# -> git add --intent-to-add host.local.nix flake.lock
+# -> git update-index --assume-unchanged host.local.nix flake.lock
 # this options will set in the update.sh file
 
 tmp/
 result/
+
+# ---( files )---
+
+alpine-*
 
 # ---( vscode )---
 

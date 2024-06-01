@@ -5,7 +5,8 @@
         apache-directory-studio # LDAP browser and directory client
         ctop # top-like interface for container metrics
         direnv # shell extension that manages your environment
-        docker# build, share, and run container applications
+        docker # build, share, and run container applications
+        gnumake # control the generation of non-source files from sources
         grafana # open source analytics & monitoring solution for every database
         kubernetes-helm # package manager for kubernetes
         k9s # terminal UI to interact with your Kubernetes clusters

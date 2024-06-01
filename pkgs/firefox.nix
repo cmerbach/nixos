@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
     programs.firefox = {
-        package = pkgs.firefox-esr;
+        package = pkgs.firefox;
         # nativeMessagingHosts.packages = [ pkgs.gnome-browser-connector ];
         policies = {
             OverrideFirstRunPage = "";
