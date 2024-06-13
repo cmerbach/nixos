@@ -1,15 +1,34 @@
 { config, pkgs, ... }:
 {
-        # ---( docker )--- settings
-    virtualisation.docker.enable = true;
-    virtualisation.docker.rootless = {
+    # ---( docker )---
+    virtualisation.docker = {
         enable = true;
-        setSocketVariable = true;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
     };
+
     # virtualisation.docker.daemon.settings = {
     #     data-root = "/some-place/to-store-the-docker-data";
     # };
 
+    # ---( libvirtd )---
+    virtualisation.libvirtd = {
+        enable = true;
+        qemu = {
+            package = pkgs.qemu_kvm;
+            runAsRoot = true;
+            swtpm.enable = true;
+            ovmf = {
+                enable = true;
+                packages = [(pkgs.OVMF.override {
+                    secureBoot = true;
+                    tpmSupport = true;
+                }).fd];
+            };
+        };
+    };
 
     # ---( virtualbox )--- extremely feature rich, high performance product for enterprise customers
     # add "virtualbox" to additional.nix

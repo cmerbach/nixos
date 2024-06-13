@@ -62,7 +62,7 @@
     #   useXkbConfig = true; # use xkb.options in tty.
     # };
 
-    #---( Enable GNOME Desktop Environment )---#
+    # ---( Enable GNOME Desktop Environment )---#
     # Enable the X11 windowing system.
     services.xserver.enable = true;
     # Enable the GNOME Desktop Environment.
@@ -103,15 +103,6 @@
     # enable gnome browser extension
     services.gnome.gnome-browser-connector.enable = true;
     nixpkgs.config.firefox.enableGnomeExtensions = true;
-    # stop pc from sleep
-    # get information via: gsettings get org.gnome.desktop.session idle-delay
-    # system.userActivationScripts = {
-    #     disable-black-screen = {
-    #         text = ''
-    #           gsettings set org.gnome.desktop.session idle-delay 0
-    #         '';
-    #     };
-    # };
     #-----
 
     # Configure keymap in X11
@@ -164,23 +155,6 @@
         nodejs
         openssl
     ];
-
-    # libvirtd service
-    virtualisation.libvirtd = {
-        enable = true;
-        qemu = {
-            package = pkgs.qemu_kvm;
-            runAsRoot = true;
-            swtpm.enable = true;
-            ovmf = {
-                enable = true;
-                packages = [(pkgs.OVMF.override {
-                    secureBoot = true;
-                    tpmSupport = true;
-                }).fd];
-            };
-        };
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
