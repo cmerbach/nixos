@@ -4,29 +4,3 @@
 # this options will set in the update.sh file
 
 tmp/
-result/
-
-# ---( files )---
-
-alpine-*
-
-# ---( vscode )---
-
-custom/vscode/coder.json
-custom/vscode/languagepacks.json
-custom/vscode/languagepacks.json
-custom/vscode/machineid
-custom/vscode/serve-web-key-half
-code-server-ipc.sock
-
-custom/vscode/CachedExtensionVSIXs/
-custom/vscode/CachedProfilesData/
-custom/vscode/extensions/
-custom/vscode/logs/
-custom/vscode/Machine/
-custom/vscode/User/*
-
-!custom/vscode/User/keybindings.json
-!custom/vscode/User/settings.json
-!custom/vscode/code-server-config
-

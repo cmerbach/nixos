@@ -25,8 +25,6 @@
             python311Packages.pandas
             python311Packages.pip
             python311Packages.virtualenv
-            #
-            python311Packages.pytorch
         qemu # generic and open source machine emulator and virtualizer
         solaar #  linux manager for many Logitech devices
         tig # text-mode interface for Git

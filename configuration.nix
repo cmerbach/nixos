@@ -11,7 +11,7 @@
         ./host.local.nix
         ./pkgs/firefox.nix
         ./pkgs/virtualization.nix
-        ./legacy/vscode-legacy.nix # legacy -> https://127.0.0.1:31545/
+        # ./legacy/vscode-legacy.nix # legacy -> https://127.0.0.1:31545/
     ];
 
     # enable flakes command
@@ -69,6 +69,7 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = false;
     services.xserver.desktopManager.gnome.enable = true;
+
     # enable displaylink and the usage of monitors via displayport
     # ---(pre install steps)---
     # nix-prefetch-url --name displaylink-580.zip https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip
@@ -104,13 +105,13 @@
     nixpkgs.config.firefox.enableGnomeExtensions = true;
     # stop pc from sleep
     # get information via: gsettings get org.gnome.desktop.session idle-delay
-    system.userActivationScripts = {
-        disable-black-screen = {
-            text = ''
-              gsettings set org.gnome.desktop.session idle-delay 0
-            '';
-        };
-    };
+    # system.userActivationScripts = {
+    #     disable-black-screen = {
+    #         text = ''
+    #           gsettings set org.gnome.desktop.session idle-delay 0
+    #         '';
+    #     };
+    # };
     #-----
 
     # Configure keymap in X11

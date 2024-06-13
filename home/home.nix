@@ -46,10 +46,13 @@
     # gnome settings
     # https://heywoodlh.io/nixos-gnome-settings-and-keyboard-shortcuts
     dconf.settings = {
-        "org/gnome/desktop/interface" ={
+        "org/gnome/desktop/session" = {
+            idle-delay = 0;
+        };
+        "org/gnome/desktop/interface" = {
             color-scheme = "prefer-dark";
         };
-        "org/gnome/desktop/interface" ={
+        "org/gnome/desktop/interface" = {
             gtk-theme = "Adwaita-dark";
             show-battery-percentage = true;
         };
@@ -76,8 +79,6 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
-                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -100,16 +101,6 @@
             command = "flameshot gui";
             binding = "<SHIFT><Ctrl><ALT>f";
         };
-        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-        #     name = "vscode-tab";
-        #     command = "firefox --new-window https://127.0.0.1:31545";
-        #     binding = "<Ctrl><Alt>v";
-        # };
-        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-        #     name = "vscode-kiosk";
-        #     command = "firefox --new-window https://127.0.0.1:31545 --kiosk";
-        #     binding = "<Ctrl><SUPER>v";
-        # };
     };
 
     # bashrc
@@ -143,6 +134,9 @@
         enable = true;
         userName  = "cmerbach";
         userEmail = "christian.merbach@gmx.de";
+        includes = [ 
+            { contents.commit.gpgSign = false; }
+        ];
     };
 
     programs.ssh = {
