@@ -118,14 +118,16 @@
             ng = "sudo nix-collect-garbage -d";
             # git
             ga = "git add .";
-            gp = "git push --force-with-lease";
             gh = "git rebase -i main";
+            gp = "git push --force-with-lease";
+            gs = "git status";
         };
 
         # some bash functions
         initExtra = ''
             np () {
-                nix shell nixpkgs#"$1";
+                export NIXPKGS_ALLOW_UNFREE=1;
+                nix shell --impure nixpkgs#"$1";
             }
         '';
 
