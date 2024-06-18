@@ -16,6 +16,12 @@
             yzhang.markdown-all-in-one
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
+                name = "excalidraw-editor";
+                publisher = "pomdtr";
+                version = "3.7.4";
+                sha256 = "hI+Qo8K+gLQuzKkaSq89D8vIxlYq9tMi31DgFiRzx0E=";
+            }
+            {
                 name = "sidebar-markdown-notes";
                 publisher = "assisrMatheus";
                 version = "1.2.0";
@@ -94,6 +100,13 @@
                             "name" = "nixos";
                             "path" = "/home/user/nixos";
                             "color" = "var(--vscode-gitDecoration-untrackedResourceForeground)";
+                        }
+                        {
+                            "isGitRepo" = true;
+                            "id" = "lifelzc7q72mxlxipaz9s";
+                            "name" = "life";
+                            "path" = "/home/user/life";
+                            "color" = "cyan";
                         }
                         {
                             "isGitRepo" = true;
@@ -198,6 +211,7 @@
             # //     "*.xml"
             # // ];
             # ---( Other )---
+            "quicknotes.config.notesLocation" = "/home/user/.quick-notes";
             "markdown-preview-enhanced.mermaidTheme" = "dark";
             "markdown-preview-github-styles.lightTheme" = "dark";
             "markdown-preview-enhanced.previewTheme" = "github-dark.css";
@@ -225,8 +239,89 @@
                     #  "icon": "issue-closed"
             };
         };
-        # keybindings = [
-            
-        # ];
+        keybindings = [
+            # ctrl + ...
+            {
+                "key" = "ctrl+alt+a";
+                "command" = "latex-workshop.build";
+                "when" = "editorTextFocus && !latex-workshop:altkeymap";
+            }
+            {
+                "key" = "ctrl+c";
+                "command" = "workbench.action.terminal.copySelection";
+                "when" = "terminalFocus && terminalTextSelected";
+            }
+            {
+                "key" = "ctrl+alt+s";
+                "command" = "latex-workshop.tab";
+            }
+            {
+                "key" = "ctrl+v";
+                "command" = "workbench.action.terminal.paste";
+                "when" = "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported";
+            }
+            # ctrl + alt
+            {
+                "key" = "ctrl+alt+down";
+                "command" = "editor.unfoldAll";
+                "when" = "editorTextFocus";
+            }
+            {
+                "key" = "ctrl+alt+up";
+                "command" = "editor.foldAll";
+                "when" = "editorTextFocus";
+            }
+            {
+                "key" = "ctrl+alt+e";
+                "command" = "workbench.action.terminal.toggleTerminal";
+            }
+            {
+                "key" = "ctrl+alt+f";
+                "command" = "workbench.action.files.openFolder";
+            }
+            {
+                "key" = "ctrl+alt+k";
+                "command" = "editor.action.commentLine";
+                "when" = "editorTextFocus && !editorReadonly";
+            }
+            {
+                "key" = "ctrl+alt+q";
+                "command" = "workbench.action.toggleEditorWidths";
+            }
+            {
+                "key" ="ctrl+alt+w";
+                "command" = "workbench.action.toggleMaximizedPanel";
+            }
+            {
+                "key" = "ctrl+alt+z";
+                "command" = "workbench.action.toggleZenMode";
+            }
+            # ctrl + shift + alt
+            {
+                "key" = "ctrl+shift+alt+q";
+                "command" = "workbench.action.terminal.kill";
+            }
+            # remove
+            {
+                "key" = "ctrl+shift+c";
+                "command" = "-workbench.action.terminal.copySelection";
+                "when" = "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected";
+            }
+            {
+                "key" = "ctrl+shift+c";
+                "command" = "-workbench.action.terminal.openNativeConsole";
+                "when" = "!terminalFocus";
+            }
+            {
+                "key" = "ctrl+v";
+                "command" = "-markdown.extension.editing.paste";
+                "when" = "editorHasSelection && editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/";
+            }
+            {
+                "key" = "ctrl+shift+v";
+                "command" = "-workbench.action.terminal.paste";
+                "when" = "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported";
+            }
+        ];
     };
 }
