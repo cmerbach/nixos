@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     # Home Manager needs a bit of information about you and the paths it should
@@ -47,7 +47,7 @@
     # https://heywoodlh.io/nixos-gnome-settings-and-keyboard-shortcuts
     dconf.settings = {
         "org/gnome/desktop/session" = {
-            idle-delay = 0;
+            idle-delay = (lib.hm.gvariant.mkUint32 0);
         };
         "org/gnome/desktop/interface" = {
             color-scheme = "prefer-dark";
