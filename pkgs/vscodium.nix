@@ -1,20 +1,26 @@
 { config, pkgs, unstable, ... }:
 {
+
     programs.vscode = {
         enable = true;
-        package = unstable.pkgs.vscodium;
+        package = pkgs.vscodium;
         extensions = with pkgs.vscode-extensions; [
-            bbenoist.nix
             foam.foam-vscode
             github.vscode-pull-request-github
             gruntfuggly.todo-tree
+            ms-toolsai.jupyter
             james-yu.latex-workshop
             johnpapa.vscode-peacock
             mhutchie.git-graph
             ms-python.python
-            ms-toolsai.jupyter
             yzhang.markdown-all-in-one
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            {
+                name = "nix-ide";
+                publisher = "jnoortheen";
+                version = "0.3.1";
+                sha256 = "05oMDHvFM/dTXB6T3rcDK3EiNG2T0tBN9Au9b+Bk7rI=";
+            }
             {
                 name = "excalidraw-editor";
                 publisher = "pomdtr";
@@ -34,16 +40,16 @@
                 sha256 = "79ZrLf8Jzpxn6RUz+mPqf9R/V4RQmInJtQtjNX7j/nM=";
             }
             {
-                name = "vscode-edit-csv";
-                publisher = "janisdd";
-                version = "0.9.1";
-                sha256 = "5Xc0X0acECR5Inmwg25gQZbdbSP6PJ+VF3oakNN/Syw=";
-            }
-            {
                 name = "VS-code-vagrantfile";
                 publisher = "marcostazi";
                 version = "0.0.7";
                 sha256 = "78O3Mt2zSgyTI1K92JqUcT86QVLLZZDcqym4/xDT7VY=";
+            }
+            {
+                name = "vscode-edit-csv";
+                publisher = "janisdd";
+                version = "0.9.1";
+                sha256 = "5Xc0X0acECR5Inmwg25gQZbdbSP6PJ+VF3oakNN/Syw=";
             }
             {
                 name = "vscode-pets";
@@ -52,10 +58,10 @@
                 sha256 = "as3e2LzKBSsiGs/UGIZ06XqbLh37irDUaCzslqITEJQ=";
             }
             {
-                name = "vscode-dashboard";
-                publisher = "kruemelkatze";
-                version = "2.6.0";
-                sha256 = "vipCGhsAXRTWQAmVV0JMUIdpMWtfCo+ohvQKaP72SZw=";
+                name = "dashyeah";
+                publisher = "bobmagicii";
+                version = "1.0.3";
+                sha256 = "qHdXwnTMoMgDZ+rEYtdn7uv1qCFixS+SRE6q3+6fEcQ=";
             }
             {
                 name = "quick-sticky-notes";
@@ -69,15 +75,21 @@
                 version = "0.0.7";
                 sha256 = "G6EllTEhlS2HYg0dd7letFExVXhzuWZrSn1QdbxMAAU=";
             }
+            {
+                name = "calc";
+                publisher = "raidou";
+                version = "2.3.2";
+                sha256 = "sqv0VyCqI3QNbNs523yx5wfYRhEWlHwVhgpCfjtrLhE=";
+            }
         ];
         userSettings = {
             # ---( Settings )---
             "editor.rulers" = [80];
             "editor.tabSize" = 4;
+            "editor.detectIndentation" = true;
+            "editor.insertSpaces" = true;
             "security.workspace.trust.untrustedFiles" = "open";
             # // "cSpell.language" = "en,de,de-DE";
-            "editor.insertSpaces" = true;
-            "editor.detectIndentation" = false;
             "editor.wordWrap" = "off";
             "editor.showFoldingControls" = "always";
             "editor.foldingStrategy" = "indentation";
@@ -88,42 +100,50 @@
                 "statusBar.noFolderBackground" = "#007acd";
             };
             # ---( Dashboard )---
-            "dashboard.storeProjectsInSettings" = true;
-            "dashboard.projectData" = [
+            "dashyeah.title" = "Projects";
+            "dashyeah.debug" = false;
+            "dashyeah.folderSizing" = "col-12";
+            "dashyeah.columnSizing" = "col-12 col-md-6";
+            "dashyeah.showPaths" = true;
+            "dashyeah.fontSize" = "font-size-normal";
+            "dashyeah.rounded" = true;
+            "dashyeah.openOnNewWindow" = true;
+            "dashyeah.openInNewWindow" = false;
+            "dashyeah.database" = [
                 {
-                    "id" = "nixosl4fv88ym1lwyzd5x5";
-                    "groupName" = "Repositories";
-                    "projects" = [
-                        {
-                            "isGitRepo" = true;
-                            "id" = "nixos67a4icq0glwyzdwau";
-                            "name" = "nixos";
-                            "path" = "/home/user/nixos";
-                            "color" = "var(--vscode-gitDecoration-untrackedResourceForeground)";
-                        }
-                        {
-                            "isGitRepo" = true;
-                            "id" = "lifelzc7q72mxlxipaz9s";
-                            "name" = "life";
-                            "path" = "/home/user/life";
-                            "color" = "cyan";
-                        }
-                        {
-                            "isGitRepo" = true;
-                            "id" = "cwbnggshgfsdl7lwyzfd5o";
-                            "name" = "cwbng";
-                            "path" = "/home/user/repos/cwbng";
-                            "color" = "violet";
-                        }
-                        {
-                            "isGitRepo" = true;
-                            "id" = "automationpipeline4vp60jnk1lwyzfuc4";
-                            "name" = "automation-pipeline";
-                            "path" = "/home/user/repos/automation-pipeline";
-                            "color" = "blue";
-                        }
-                    ];
-                    "collapsed" = false;
+                    "id" = "d54905d6-dcec-46b0-86f9-f7f3a2131d98";
+                    "name" = "nixos";
+                    "path" = "file:///home/user/nixos";
+                    "icon" = "codicon-terminal-bash";
+                    "accent" = "#006400";
+                }
+                {
+                    "id" = "53ecbef8-7920-46d6-ab15-705f4930667b";
+                    "name" = "life";
+                    "path" = "file:///home/user/life";
+                    "icon" = "codicon-folder";
+                    "accent" = "#00ffff";
+                }
+                {
+                    "id" = "8c60aef1-e040-4545-bb94-242ebe7e3fc4";
+                    "name" = "automation-pipeline";
+                    "path" = "file:///home/user/repos/automation-pipeline";
+                    "icon" = "codicon-folder";
+                    "accent" = "#0000ff";
+                }
+                {
+                    "id" = "ce2357d4-6686-4b75-86ff-8e8b43f4d4a0";
+                    "name" = "cwbng";
+                    "path" = "file:///home/user/repos/cwbng";
+                    "icon" = "codicon-folder";
+                    "accent" = "#8a2be2";
+                }
+                {
+                    "id" = "d9fc620e-429d-4a1e-a93f-4e24a0f0aaab";
+                    "name" = "terraform-infrastructure";
+                    "path" = "file:///home/user/repos/terraform-infrastructure";
+                    "icon" = "codicon-folder";
+                    "accent" = "#a9a9a9";
                 }
             ];
             # ---( LaTeX )---
@@ -212,9 +232,6 @@
             # // ];
             # ---( Other )---
             "quicknotes.config.notesLocation" = "/home/user/.quick-notes";
-            "markdown-preview-enhanced.mermaidTheme" = "dark";
-            "markdown-preview-github-styles.lightTheme" = "dark";
-            "markdown-preview-enhanced.previewTheme" = "github-dark.css";
             "todo-tree.highlights.defaultHighlight" = {
                 "foreground" = "#1bb107aa";   
             };

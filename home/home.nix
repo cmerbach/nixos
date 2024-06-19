@@ -113,7 +113,7 @@
             # docker
             nn = "docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n";
             # nixos
-            nr = "git -C  /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nr = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
             # git
@@ -168,10 +168,6 @@
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     home.file = {
-    #".config/VSCodium/User/" = {
-     #      source = "/home/user/.config/VSCodium/User/settings.json";
-    #        recursive = true;
-     #   };
         # # Building this configuration will create a copy of 'dotfiles/screenrc' in
         # # the Nix store. Activating the configuration will then make '~/.screenrc' a
         # # symlink to the Nix store copy.
@@ -182,7 +178,7 @@
         #   org.gradle.console=verbose
         #   org.gradle.daemon.idletimeout=3600000
         # '';
-   };
+    };
 
     # Home Manager can also manage your environment variables through
     # 'home.sessionVariables'. If you don't want to manage your shell through Home
