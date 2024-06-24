@@ -71,8 +71,22 @@
                 "pano@elhan.io" 
                 # "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "thunderbird.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
+            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
+        # settings for the individual gnome extensions
+        "org/gnome/shell/extensions/executor" = {
+            click-on-output-active = false;
+            left-active = false;
+            left-index = 0;
+            center-active = false;
+            center-index = 0;
+            right-active = true;
+            right-index = 0;
+        };
+        "com/github/amezin/ddterm" = {
+            ddterm-toggle-hotkey = "<Control><Alt>a";
+        };
+        # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -89,7 +103,7 @@
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
             name = "gnome-terminal";
             command = "kgx";
-            binding = "<Ctrl><Alt>t";
+            binding = "<Ctrl><SHIFT><Alt>t";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
             name = "thunderbird";

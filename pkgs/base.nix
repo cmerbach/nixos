@@ -7,6 +7,7 @@
         ffmpeg # free and open-source software consisting of a suite of libraries for video, audio, and other multimedia files
         flameshot # free and open-source tool to take screenshots with many built-in features 
         gimp # cross-platform image editor
+        gnome.dconf-editor # gsettings editor for gnome
         gnupg # OpenPGP implementation
         gzip # gnu zip compression program
         htop # cross-platform interactive process viewe

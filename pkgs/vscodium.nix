@@ -107,7 +107,7 @@
             "dashyeah.showPaths" = true;
             "dashyeah.fontSize" = "font-size-normal";
             "dashyeah.rounded" = true;
-            "dashyeah.openOnNewWindow" = true;
+            "dashyeah.openOnNewWindow" = false;
             "dashyeah.openInNewWindow" = false;
             "dashyeah.database" = [
                 {
@@ -125,25 +125,34 @@
                     "accent" = "#00ffff";
                 }
                 {
-                    "id" = "8c60aef1-e040-4545-bb94-242ebe7e3fc4";
-                    "name" = "automation-pipeline";
-                    "path" = "file:///home/user/repos/automation-pipeline";
-                    "icon" = "codicon-folder";
-                    "accent" = "#0000ff";
-                }
-                {
-                    "id" = "ce2357d4-6686-4b75-86ff-8e8b43f4d4a0";
-                    "name" = "cwbng";
-                    "path" = "file:///home/user/repos/cwbng";
+                    "id" = "19f97d8e-214b-4a28-89ca-3d4c7dbc5e70";
+                    "name" = "ExB";
                     "icon" = "codicon-folder";
                     "accent" = "#8a2be2";
-                }
-                {
-                    "id" = "d9fc620e-429d-4a1e-a93f-4e24a0f0aaab";
-                    "name" = "terraform-infrastructure";
-                    "path" = "file:///home/user/repos/terraform-infrastructure";
-                    "icon" = "codicon-folder";
-                    "accent" = "#a9a9a9";
+                    "open" = true;
+                    "projects" = [
+                        {
+                            "id" = "8c60aef1-e040-4545-bb94-242ebe7e3fc4";
+                            "name" = "automation-pipeline";
+                            "path" = "file:///home/user/repos/automation-pipeline";
+                            "icon" = "codicon-folder";
+                            "accent" = "#0000ff";
+                        }
+                        {
+                            "id" = "ce2357d4-6686-4b75-86ff-8e8b43f4d4a0";
+                            "name" = "cwbng";
+                            "path" = "file:///home/user/repos/cwbng";
+                            "icon" = "codicon-folder";
+                            "accent" = "#9932cc";
+                        }
+                        {
+                            "id" = "d9fc620e-429d-4a1e-a93f-4e24a0f0aaab";
+                            "name" = "terraform-infrastructure";
+                            "path" = "file:///home/user/repos/terraform-infrastructure";
+                            "icon" = "codicon-folder";
+                            "accent" = "#a9a9a9";
+                        }
+                    ];
                 }
             ];
             # ---( LaTeX )---

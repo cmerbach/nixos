@@ -19,6 +19,10 @@
             ruff # extremely fast Python linter
             gcc_multi # GNU compiler collection
             tflint # terraform linter
+        
+# python3.withPackages (python-pkgs: [python-pkgs.identify])
+
+        slack # web-based instant messaging service
         terraform #  infrastructure as code tool
         texliveFull # latex
         vagrant # create and configure lightweight, reproducible, and portable development environments
