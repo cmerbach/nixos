@@ -84,7 +84,7 @@
             right-index = 0;
         };
         "com/github/amezin/ddterm" = {
-            ddterm-toggle-hotkey = "<Control><Alt>a";
+            ddterm-toggle-hotkey = "<Control><Alt>t";
         };
         # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
