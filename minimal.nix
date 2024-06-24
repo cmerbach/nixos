@@ -18,7 +18,8 @@
     boot.loader.grub.enable = true;
     boot.loader.grub.efiSupport = true;
     boot.loader.grub.efiInstallAsRemovable = true;
-    boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_7;
+    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_7;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
     # boot.kernelPackages = pkgs.linuxPackages_latest;
     # boot.binfmt.emulatedSystems = [ "aarch64-linux" ]; # https://github.com/plmercereau/nixos-pi-zero-2
     
