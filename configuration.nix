@@ -102,7 +102,7 @@
     ]);
     # enable gnome browser extension
     services.gnome.gnome-browser-connector.enable = true;
-    nixpkgs.config.firefox.enableGnomeExtensions = true;
+# nixpkgs.config.firefox.enableGnomeExtensions = true;
     #-----
 
     # Configure keymap in X11
@@ -143,9 +143,9 @@
             "networkmanager"
             "wheel" # enables 'sudo' for the user
         ]; 
-        packages = with pkgs; [
-            firefox
-        ];
+#packages = with pkgs; [
+#    firefox
+#];
     };
 
     # List packages installed in system profile. To search, run:

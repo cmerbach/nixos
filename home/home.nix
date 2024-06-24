@@ -84,7 +84,14 @@
             right-index = 0;
         };
         "com/github/amezin/ddterm" = {
+            window-position = "top";
+            audible-bell = false;
+            shortcuts-enabled = true;
+            panel-icon-type = "toggle-and-menu-button";
+            window-size = "0.6";
             ddterm-toggle-hotkey = "<Control><Alt>t";
+            shortcut-terminal-copy = "<Control>c";
+            shortcut-terminal-paste = "<Control>v";
         };
         # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -127,7 +134,8 @@
             # docker
             nn = "docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n";
             # nixos
-            nr = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nr = "git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nrc = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
             # git
