@@ -20,13 +20,5 @@ git update-index --assume-unchanged host.local.nix flake.lock
 device=$(lsblk | grep -B 2 "/boot$" | head -n1 | cut -d' ' -f1)
 sed -i "s/device = lib\.mkDefault \"\/dev\/.*$/device = lib\.mkDefault \"\/dev\/${device}\";/" disko.nix
 
-# set and change the branch
-if [ -z "$BRANCH" ]; then
-    echo "You are using MAIN branch"
-else
-    echo "You are using $BRANCH branch"
-    git branch $BRANCH
-fi
-
 # run install
 git add . && sudo nixos-rebuild switch --flake '.#full'
