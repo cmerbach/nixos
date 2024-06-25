@@ -12,7 +12,6 @@ echo "y" | ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
 sshpass -p "pwinit" ssh-copy-id -o StrictHostKeyChecking=no root@127.0.0.1
 
 # download repo
-# xport BRANCH=fixes
 if [ -z "$BRANCH" ]; then
     # BRANCH is not set, run the default command
     echo "You are using MAIN branch"
@@ -20,7 +19,7 @@ if [ -z "$BRANCH" ]; then
 else
     # BRANCH is set, run the alternative command
     echo "You are using $BRANCH branch"
-    git clone --single-branch --branch "$BRANCH" ttps://github.com/cmerbach/nixos.git && cd nixos/
+    git clone --single-branch --branch "$BRANCH" https://github.com/cmerbach/nixos.git && cd nixos/
 fi
 
 # user input to change the install device

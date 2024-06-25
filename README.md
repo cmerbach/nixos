@@ -31,6 +31,9 @@ ssh-keygen -f "/home/user/.ssh/known_hosts" -R "[127.0.0.1]:8888" && \
 #     ssh -o StrictHostKeyChecking=no -o PreferredAuthentications=password nixos@192.168.178.30
 
 # download repo and server install
+# set also a branch for e.g.: export BRANCH=fixes
+curl -O https://raw.githubusercontent.com/cmerbach/nixos/$BRANCH/install.sh && chmod +x install.sh && ./install.sh
+# or
 curl -O https://raw.githubusercontent.com/cmerbach/nixos/main/install.sh && chmod +x install.sh && ./install.sh
 
 # reboot and start the system
