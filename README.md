@@ -46,7 +46,7 @@ git clone https://github.com/cmerbach/nixos.git && cd nixos && git checkout $BRA
 git clone https://github.com/cmerbach/nixos.git && cd nixos && git branch && chmod +x update.sh && ./update.sh
 
 # set repo to ssh
-cd && cd nixos/ && git remote set-url origin git@github.com:cmerbach/nixos.git
+cd && cd nixos/ && git checkout main && git branch && git remote set-url origin git@github.com:cmerbach/nixos.git
 ```
 
 <br>
