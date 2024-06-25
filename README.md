@@ -41,9 +41,9 @@ qemu-system-x86_64 -enable-kvm -hda tmp/nixos.img -smp 8 -m 16G -nic user,hostfw
 
 # download repo and desktop install
 # set also a branch for e.g.: export BRANCH=fixes
-git clone https://github.com/cmerbach/nixos.git && cd nixos && git branch $BRANCH && chmod +x update.sh && ./update.sh
+git clone https://github.com/cmerbach/nixos.git && cd nixos && git checkout $BRANCH && git branch && chmod +x update.sh && ./update.sh
 # or
-git clone https://github.com/cmerbach/nixos.git && cd nixos && chmod +x update.sh && ./update.sh
+git clone https://github.com/cmerbach/nixos.git && cd nixos && git branch && chmod +x update.sh && ./update.sh
 
 # set repo to ssh
 cd && cd nixos/ && git remote set-url origin git@github.com:cmerbach/nixos.git

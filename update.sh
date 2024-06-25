@@ -1,4 +1,4 @@
-#!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#cowsay -- command bash
+#!/usr/bin/env -S nix shell nixpkgs#bash nixpkgs#cowsay --command bash
 
 # nixpkgs#bash - 
 # nixpkgs#cowsay - 
