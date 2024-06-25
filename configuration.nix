@@ -9,9 +9,9 @@
         # Include the results of the hardware scan.
         # ./hardware-configuration.nix
         ./host.local.nix
-        ./pkgs/firefox.nix
+# ./legacy/firefox.nix
         ./pkgs/virtualization.nix
-        # ./legacy/vscode-legacy.nix # legacy -> https://127.0.0.1:31545/
+# ./legacy/vscode-legacy.nix # legacy -> https://127.0.0.1:31545/
     ];
 
     # enable flakes command
@@ -100,9 +100,6 @@
         totem       # video player
         yelp        # help viewer
     ]);
-    # enable gnome browser extension
-    services.gnome.gnome-browser-connector.enable = true;
-# nixpkgs.config.firefox.enableGnomeExtensions = true;
     #-----
 
     # Configure keymap in X11
@@ -143,9 +140,9 @@
             "networkmanager"
             "wheel" # enables 'sudo' for the user
         ]; 
-#packages = with pkgs; [
-#    firefox
-#];
+        #packages = with pkgs; [
+        #    firefox
+        #];
     };
 
     # List packages installed in system profile. To search, run:

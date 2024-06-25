@@ -8,6 +8,7 @@
         flameshot # free and open-source tool to take screenshots with many built-in features 
         gimp # cross-platform image editor
         gnome.dconf-editor # gsettings editor for gnome
+        gnome-extension-manager # desktop app for managing GNOME shell extensions - command: extension-manager
         gnupg # OpenPGP implementation
         gzip # gnu zip compression program
         htop # cross-platform interactive process viewe
@@ -31,6 +32,8 @@
         tig # text-mode interface for Git
         tmux # terminal multiplexer
         tree # view directory hierarchy recursively as a tree structure
+        vivaldi # powerful, personal and private browser
+            vivaldi-ffmpeg-codecs # additional support for proprietary codecs for vivaldi
         vlc # free and open source cross-platform multimedia player
         wget # free software package for retrieving files using HTTP, HTTPS, FTP and FTPS
         yt-dlp # cli tool to download videos from YouTube (youtube-dl fork)

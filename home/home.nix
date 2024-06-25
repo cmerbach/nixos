@@ -71,9 +71,10 @@
                 "pano@elhan.io" 
                 # "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "codium.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
+            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "vivaldi-stable.desktop" "codium.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
         # settings for the individual gnome extensions
+        # info: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
         "org/gnome/shell/extensions/executor" = {
             click-on-output-active = false;
             left-active = false;
@@ -88,10 +89,10 @@
             audible-bell = false;
             shortcuts-enabled = true;
             panel-icon-type = "toggle-and-menu-button";
-            window-size = "0.6";
-            ddterm-toggle-hotkey = "<Control><Alt>t";
-            shortcut-terminal-copy = "<Control>c";
-            shortcut-terminal-paste = "<Control>v";
+            window-size = (lib.hm.gvariant.mkDouble "0.6");
+            ddterm-toggle-hotkey = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><Alt>t"]);
+            shortcut-terminal-copy = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control>c"]);
+            shortcut-terminal-paste = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control>v"]);
         };
         # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
