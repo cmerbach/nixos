@@ -1,6 +1,8 @@
 #!/usr/bin/env -S nix --experimental-features "nix-command flakes" shell nixpkgs#bash nixpkgs#cowsay nixpkgs#git nixpkgs#sshpass --command bash
 
+
 cowsay I will install nixos - server
+
 
 # change the root password
 echo "root:pwinit" | sudo chpasswd

@@ -40,6 +40,7 @@ curl -O https://raw.githubusercontent.com/cmerbach/nixos/main/install.sh && chmo
 qemu-system-x86_64 -enable-kvm -hda tmp/nixos.img -smp 8 -m 16G -nic user,hostfwd=tcp::8888-:22
 
 # download repo and desktop install
+# set also a branch for e.g.: export BRANCH=fixes
 git clone https://github.com/cmerbach/nixos.git && cd nixos && chmod +x update.sh && ./update.sh
 
 # set repo to ssh
