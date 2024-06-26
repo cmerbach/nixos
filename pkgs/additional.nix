@@ -14,7 +14,7 @@
         gnomeExtensions.pano # https://extensions.gnome.org/extension/5278/pano/
 
 telegram-desktop
-thunderbird
+# thunderbird
 xournalpp
 
         # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com

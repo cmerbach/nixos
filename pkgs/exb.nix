@@ -22,7 +22,7 @@
         
 # python3.withPackages (python-pkgs: [python-pkgs.identify])
 
-        slack # web-based instant messaging service
+# slack # web-based instant messaging service
         terraform #  infrastructure as code tool
         texliveFull # latex
         vagrant # create and configure lightweight, reproducible, and portable development environments
