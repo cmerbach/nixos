@@ -32,13 +32,12 @@
         tig # text-mode interface for Git
         tmux # terminal multiplexer
         tree # view directory hierarchy recursively as a tree structure
-# vivaldi # powerful, personal and private browser
+# vivaldi 
             vivaldi-ffmpeg-codecs # additional support for proprietary codecs for vivaldi
         vlc # free and open source cross-platform multimedia player
         wget # free software package for retrieving files using HTTP, HTTPS, FTP and FTPS
         yt-dlp # cli tool to download videos from YouTube (youtube-dl fork)
     ] ++ (with unstable; [
-        vivaldi
-        # vscodium # open source software of vs code
+        vivaldi # powerful, personal and private browser
     ]);
 }
