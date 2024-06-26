@@ -96,6 +96,10 @@
             shortcut-background-opacity-inc = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><SHIFT>plus"]);
             shortcut-background-opacity-dec = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><SHIFT>-"]);
         };
+        "org/gnome/shell/extensions/pano" = {
+            play-audio-on-copy = false;
+            send-notification-on-copy = false;
+        };
         # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
