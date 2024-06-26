@@ -12,12 +12,7 @@
         gnomeExtensions.ddterm # https://extensions.gnome.org/extension/3780/ddterm/
         gnomeExtensions.executor # https://extensions.gnome.org/extension/2932/executor/
         gnomeExtensions.pano # https://extensions.gnome.org/extension/5278/pano/
-
-telegram-desktop
-# thunderbird
-xournalpp
-
-        # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com
+        # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com   
     ] ++ (with unstable; [
         flashprint # slicer for flashforge 3d printers
     ]);

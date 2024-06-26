@@ -35,6 +35,7 @@
         vivaldi-ffmpeg-codecs # additional support for proprietary codecs for vivaldi
         vlc # free and open source cross-platform multimedia player
         wget # free software package for retrieving files using HTTP, HTTPS, FTP and FTPS
+        xournalpp # software for pdf annotation support
         yt-dlp # cli tool to download videos from YouTube (youtube-dl fork)
     ] ++ (with unstable; [
         vivaldi # powerful, personal and private browser
