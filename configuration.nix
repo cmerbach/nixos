@@ -153,6 +153,14 @@
         openssl
     ];
 
+    # set xdg user dirs
+    environment.etc = {
+        "xdg/user-dirs.defaults".text = ''
+            DESKTOP=Schreibtisch
+            DOWNLOAD=Downloads
+        '';
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
