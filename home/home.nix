@@ -106,29 +106,29 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-            name = "firefox";
-            command = "firefox";
-            binding = "<Ctrl><Alt>f";
+            name = "vivaldi";
+            command = "vivaldi";
+            binding = "<SHIFT><Ctrl><ALT>b";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
             name = "gnome-terminal";
             command = "kgx";
-            binding = "<Ctrl><SHIFT><Alt>t";
+            binding = "<SHIFT><Ctrl><ALT>t";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-            name = "thunderbird";
-            command = "thunderbird";
-            binding = "<Ctrl><SHIFT><Alt>t";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
             name = "flameshot";
             command = "flameshot gui";
             binding = "<SHIFT><Ctrl><ALT>f";
         };
+        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        #     name = "running vm";
+        #     command = "thunderbird";
+        #     binding = "";
+        # };
     };
 
     # bashrc
