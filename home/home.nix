@@ -90,7 +90,7 @@
             shortcuts-enabled = true;
             panel-icon-type = "toggle-and-menu-button";
             window-size = (lib.hm.gvariant.mkDouble "0.6");
-            ddterm-toggle-hotkey = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><Alt>t"]);
+            ddterm-toggle-hotkey = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<SHIFT><Control><Alt>a"]);
             shortcut-terminal-copy = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control>c"]);
             shortcut-terminal-paste = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control>v"]);
             shortcut-background-opacity-inc = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><SHIFT>plus"]);
@@ -117,7 +117,7 @@
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
             name = "gnome-terminal";
             command = "kgx";
-            binding = "<SHIFT><Ctrl><ALT>t";
+            binding = "<Ctrl><ALT>t";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
             name = "flameshot";
