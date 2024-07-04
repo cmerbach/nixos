@@ -174,6 +174,7 @@
                 printf "\e[A\e[K";
                 printf '%s(%s): ' "$type" "$user_scope";
                 read -r commit_message;
+                echo ""
                 git commit -m "$type($user_scope): $commit_message";
             };
 
