@@ -22,6 +22,7 @@
         
 # python3.withPackages (python-pkgs: [python-pkgs.identify])
 
+        rustdesk # remote access and remote control software
         terraform #  infrastructure as code tool
         texliveFull # latex
         vagrant # create and configure lightweight, reproducible, and portable development environments
