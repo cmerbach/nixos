@@ -13,6 +13,7 @@
         kubectl # command line tool for communicating with a kubernetes cluster
         kubectx # tool to switch between contexts (clusters) on kubectl faster
         minikube # local kubernetes cluster
+        pick # fuzzy text selection utility
         poetry # python dependency and packaging management
         pre-commit # framework for managing and maintaining multi-language pre-commit hooks
             rustc # safe, concurrent, practical language

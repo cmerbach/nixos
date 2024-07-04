@@ -140,6 +140,8 @@
         shellAliases = {
             # docker
             nn = "docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n";
+            # kubectl
+            kx = "kubectx";
             # nixos
             nr = "git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             nrc = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
@@ -149,7 +151,12 @@
             ga = "git add .";
             gh = "git rebase -i main";
             gp = "git push --force-with-lease";
+            gpm = "git push -o merge_request.create";
+            gr = "git reset --soft HEAD~1";
             gs = "git status";
+            # youtube-dl
+            yt  = "yt-dlp";
+            yt3 = "yt-dlp --extract-audio --audio-format mp3";
         };
 
         # some bash functions
@@ -157,7 +164,19 @@
             np () {
                 export NIXPKGS_ALLOW_UNFREE=1;
                 nix shell --impure nixpkgs#"$1";
-            }
+            };
+            gm () {
+                file_path="/home/user/life/exb/files/docs/Conventional Commit Messages.md";
+                types=$(awk '/### Types/{p=1; next} /^###/{p=0} p' "$file_path" | sed '1d;$d' | awk -F '`' '{if ($2) gsub("Commits, that", "", $3); printf "%s - %s\n", $2, gensub(/^ */, "", 1, $3)}' | sed '/./,$!d');
+                type=$(echo "$types" | pick -X | cut -d '-' -f 1 | sed 's/ *$//')
+                printf "%s(" "$type";
+                read -r user_scope;
+                printf "\e[A\e[K";
+                printf '%s(%s): ' "$type" "$user_scope";
+                read -r commit_message;
+                git commit -m "$type($user_scope): $commit_message";
+            };
+
         '';
 
         bashrcExtra = ''
