@@ -22,11 +22,15 @@
         nomacs # free and open source image viewer
         p7zip # command line tool fork of the free 7-zip archive program for posix platforms
         pdfarranger # python-gtk application to merge or split PDF documents
-        python3 # universal, interpreted, high-level programming language
-            python311Packages.duckdb
-            python311Packages.pandas
-            python311Packages.pip
-            python311Packages.virtualenv
+        # python3 # universal, interpreted, high-level programming language
+        (python3.withPackages (python-pkgs: [
+            python-pkgs.pandas
+            python-pkgs.duckdb
+            python-pkgs.pip
+            python-pkgs.virtualenv
+            python-pkgs.identify
+            python-pkgs.cfgv
+        ]))
         qemu # generic and open source machine emulator and virtualizer
         solaar #  linux manager for many Logitech devices
         tig # text-mode interface for Git

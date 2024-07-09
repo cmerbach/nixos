@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, unstable, ... }:
 {
     home.packages = with pkgs; [
         asdf # manage all your runtime versions with one tool
@@ -15,14 +15,11 @@
         minikube # local kubernetes cluster
         pick # fuzzy text selection utility
         poetry # python dependency and packaging management
-        pre-commit # framework for managing and maintaining multi-language pre-commit hooks
+        unstable.pre-commit # framework for managing and maintaining multi-language pre-commit hooks
             rustc # safe, concurrent, practical language
-            ruff # extremely fast Python linter
+            unstable.ruff # extremely fast Python linter
             gcc_multi # GNU compiler collection
             tflint # terraform linter
-        
-# python3.withPackages (python-pkgs: [python-pkgs.identify])
-
         rustdesk # remote access and remote control software
         terraform #  infrastructure as code tool
         texliveFull # latex
