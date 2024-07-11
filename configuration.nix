@@ -36,6 +36,10 @@
     # boot.loader.efi.efiSysMountPoint = "/boot/efi";
     # Define on which hard drive you want to install Grub.
     # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only # Disko will take care of that automatically
+    # enable dmesg logging
+    boot.kernelParams = [ "loglevel=7" ];
+    # enable syslog-ng for traditional syslog files (optional)
+    services.syslog-ng.enable = true;
 
     # Set your time zone.
     time.timeZone = "Europe/Berlin";

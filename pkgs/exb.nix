@@ -16,7 +16,7 @@
         pick # fuzzy text selection utility
         poetry # python dependency and packaging management
         unstable.pre-commit # framework for managing and maintaining multi-language pre-commit hooks
-            rustc # safe, concurrent, practical language
+            unstable.rustc # safe, concurrent, practical language
             unstable.ruff # extremely fast Python linter
             gcc_multi # GNU compiler collection
             tflint # terraform linter
