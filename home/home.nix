@@ -172,9 +172,9 @@
                 nix shell --impure nixpkgs#"$1";
             };
             gm () {
-                file_path="/home/user/life/exb/files/docs/Conventional Commit Messages.md";
-                types=$(awk '/### Types/{p=1; next} /^###/{p=0} p' "$file_path" | sed '1d;$d' | awk -F '`' '{if ($2) gsub("Commits, that", "", $3); printf "%s - %s\n", $2, gensub(/^ */, "", 1, $3)}' | sed '/./,$!d');
-                type=$(echo "$types" | pick -X | cut -d '-' -f 1 | sed 's/ *$//')
+                list="feat - adds a new feature\nfix - fixes a bug\nrefactor - rewrite/restructure your code, however does not change any behaviour\nperf - special refactor commits, that improve performance\nstyle - do not affect the meaning (white space, formatting, missing semi colons, etc)\ntest - add missing tests or correcting existing tests\ndocs - affect documentation only\nbuild - affect build components like build tool, ci pipeline, dependencies, project version, ...\nops - affect operational components like infrastructure, deployment, backup, recovery, ...\nchore - miscellaneous commits e.g. modifying .gitignore"
+
+                type=$(echo -e $list | column -t -s "-" | pick -X | cut -d' ' -f1)
                 printf "%s(" "$type";
                 read -r user_scope;
                 printf "\e[A\e[K";
