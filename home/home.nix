@@ -106,7 +106,8 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-                # "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -124,11 +125,16 @@
             command = "flameshot gui";
             binding = "<SHIFT><Ctrl><ALT>f";
         };
-        # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-        #     name = "running vm";
-        #     command = "thunderbird";
-        #     binding = "";
-        # };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+            name = "open nixos package webside";
+            command = "vivaldi https://search.nixos.org/packages";
+            binding = "<SHIFT><Ctrl><ALT>P";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+            name = "open nixos package webside";
+            command = "java -jar /home/user/.jdownloader2/JDownloader.jar";
+            binding = "<Ctrl><ALT>J";
+        };
     };
 
     # bashrc

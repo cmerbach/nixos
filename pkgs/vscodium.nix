@@ -152,6 +152,13 @@
                             "icon" = "codicon-folder";
                             "accent" = "#a9a9a9";
                         }
+                        {
+                            "id" = "2e1b51c5-86ec-41cc-8557-5f79daa9cc8b";
+                            "name" = "exb_gpu_worker";
+                            "path" = "file:///home/user/repos/exb_gpu_worker";
+                            "icon" = "codicon-folder";
+                            "accent" = "#37ff6b";
+                        }
                     ];
                 }
             ];

@@ -12,6 +12,7 @@
         gnomeExtensions.ddterm # https://extensions.gnome.org/extension/3780/ddterm/
         gnomeExtensions.executor # https://extensions.gnome.org/extension/2932/executor/
         gnomeExtensions.pano # https://extensions.gnome.org/extension/5278/pano/
+        megatools # command line client for mega.nz
         # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com
         yt-dlp # cli tool to download videos from youtube
     ] ++ (with unstable; [

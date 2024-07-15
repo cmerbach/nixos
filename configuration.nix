@@ -164,6 +164,19 @@
         '';
     };
 
+    # running command after install
+    system.userActivationScripts = {
+        jdownloader2 = {
+            text = ''
+                JDOWNLOADER_PATH="/home/user/.jdownloader2"
+                if [ ! -d "$JDOWNLOADER_PATH" ]; then
+                    mkdir -p "$JDOWNLOADER_PATH"
+                    ${pkgs.megatools}/bin/megadl https://mega.nz/file/LZVEnKJI#4gzq0u-6n_adkIMcw3UiN_WUhi3JgFmin93tiIqo58Q --path "$JDOWNLOADER_PATH"
+                fi
+            '';
+        };
+    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;

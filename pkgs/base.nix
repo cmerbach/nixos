@@ -3,6 +3,7 @@
     home.packages = with pkgs; [
         audacity # audio editing and recording software
         btop # monitor of resources
+        busybox # tiny versions of common unixutilities in a single small executable - e.g. killall
         curl # cli tool for transferring data using various network protocols
         ffmpeg # free and open-source software consisting of a suite of libraries for video, audio, and other multimedia files
         flameshot # free and open-source tool to take screenshots with many built-in features 
@@ -13,6 +14,7 @@
         gzip # gnu zip compression program
         htop # cross-platform interactive process viewe
         iftop # cli system monitor toolfor network traffic
+        jdk21 # java currently-supported LTS version of OpenJDK
         kdenlive # free and open source cross-platform video editing program
         libvirt # toolkit to interact with the virtualization capabilities of linux
         lorien # infinite canvas drawing/note-taking app

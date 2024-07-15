@@ -18,7 +18,7 @@
         unstable.pre-commit # framework for managing and maintaining multi-language pre-commit hooks
             unstable.rustc # safe, concurrent, practical language
             unstable.ruff # extremely fast Python linter
-            gcc_multi # GNU compiler collection
+            libgcc # GNU compiler collection
             tflint # terraform linter
         rustdesk # remote access and remote control software
         terraform #  infrastructure as code tool
