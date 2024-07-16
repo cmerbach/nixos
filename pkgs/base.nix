@@ -18,6 +18,8 @@
         kdenlive # free and open source cross-platform video editing program
         libvirt # toolkit to interact with the virtualization capabilities of linux
         lorien # infinite canvas drawing/note-taking app
+        lvm2 # support logical volume management (lvm) on linux
+        mdadm # managing raid arrays under linux
         mkvtoolnix # set of tools used for creating, modifying, and inspecting mkv files
         mpv # free media player for the command line
         nnn # full-featured terminal file manager
