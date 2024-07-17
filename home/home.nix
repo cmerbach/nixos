@@ -219,6 +219,22 @@
 	    '';
     };
 
+    # set default application
+    xdg.mimeApps = {
+        enable = true;
+        # search/get info e.g.: xdg-mime query default video/mp4
+        # cat /home/user/.config/mimeapps.list
+        defaultApplications = {
+            "text/plain" = "org.gnome.TextEditor.desktop";
+            "application/x-zerosize" = "org.gnome.TextEditor.desktop";
+            "application/pdf" = "org.gnome.Evince.desktop";
+            "image/jpeg" = "nomacs.desktop";
+            "image/png" = "nomacs.desktop";
+            "video/mp4" = "vlc.desktop";
+            "video/mkv" = "vlc.desktop";
+        };
+    };
+
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     home.file = {
