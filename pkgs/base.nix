@@ -34,6 +34,7 @@
             python-pkgs.virtualenv
             python-pkgs.identify
             python-pkgs.cfgv
+            python-pkgs.pre-commit-hooks
         ]))
         qemu # generic and open source machine emulator and virtualizer
         solaar #  linux manager for many Logitech devices
