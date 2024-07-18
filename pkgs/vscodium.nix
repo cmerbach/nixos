@@ -3,7 +3,7 @@
 
     programs.vscode = {
         enable = true;
-        package = pkgs.vscodium; # open source software of vs code
+        package = unstable.vscodium; # pkgs. or unstable. - open source software of vs code
         extensions = with pkgs.vscode-extensions; [
             foam.foam-vscode
             github.vscode-pull-request-github
