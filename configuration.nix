@@ -108,7 +108,7 @@
 
     # Configure keymap in X11
     services.xserver.xkb.layout = "de";
-    services.xserver.xkbVariant = "";
+    services.xserver.xkb.variant = "";
 
     # Configure console keymap
     console.keyMap = "de";
@@ -130,7 +130,7 @@
     };
 
     # Enable touchpad support (enabled default in most desktopManager)
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with passwd
     users.users.user = {
@@ -182,7 +182,6 @@
     # programs.mtr.enable = true;
     programs.gnupg.agent = {
         enable = true;
-        pinentryFlavor = "gtk2";
         enableSSHSupport = true;
     };
 
