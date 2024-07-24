@@ -109,6 +109,7 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -132,6 +133,11 @@
             binding = "<SHIFT><Ctrl><ALT>P";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+            name = "open nixos package webside";
+            command = "vivaldi https://chatgpt.com/";
+            binding = "<SHIFT><Ctrl><ALT>G";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
             name = "open nixos package webside";
             command = "java -jar /home/user/.jdownloader2/JDownloader.jar";
             binding = "<Ctrl><ALT>J";
