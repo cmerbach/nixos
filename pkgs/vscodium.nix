@@ -118,11 +118,27 @@
                     "accent" = "#006400";
                 }
                 {
-                    "id" = "53ecbef8-7920-46d6-ab15-705f4930667b";
-                    "name" = "life";
-                    "path" = "file:///home/user/life";
+                    "id" = "01f1e516-0ed8-4855-ae42-ffa8c22ff70c";
+                    "name" = "Privat";
                     "icon" = "codicon-folder";
                     "accent" = "#00ffff";
+                    "open" = true;
+                    "projects" = [
+                        {
+                            "id" = "53ecbef8-7920-46d6-ab15-705f4930667b";
+                            "name" = "life";
+                            "path" = "file:///home/user/life";
+                            "icon" = "codicon-folder";
+                            "accent" = "#00ffff";
+                        }
+                        {
+                            "id" = "86bea5d4-0287-4490-a0fa-4d0ac2f1f2e3";
+                            "name" = "raspi";
+                            "path" = "file:///home/user/repos/raspi";
+                            "icon" = "codicon-folder";
+                            "accent" = "#A2C200";
+                        }
+                    ];
                 }
                 {
                     "id" = "19f97d8e-214b-4a28-89ca-3d4c7dbc5e70";
