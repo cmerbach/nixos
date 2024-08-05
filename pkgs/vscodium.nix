@@ -14,6 +14,7 @@
             mhutchie.git-graph
             ms-python.python
             yzhang.markdown-all-in-one
+            ms-kubernetes-tools.vscode-kubernetes-tools
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
                 name = "nix-ide";
@@ -287,6 +288,7 @@
                     #  "icon" = "issue-draft"
                     #  "icon": "issue-closed"
             };
+            "excalidraw.theme" = "dark";
         };
         keybindings = [
             # ctrl + ...

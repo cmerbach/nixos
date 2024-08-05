@@ -174,6 +174,10 @@
         };
     };
 
+
+    # enable YubiKey support
+    services.udev.packages = [ pkgs.yubikey-personalization ];
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;

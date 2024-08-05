@@ -12,9 +12,13 @@
         gnomeExtensions.ddterm # https://extensions.gnome.org/extension/3780/ddterm/
         gnomeExtensions.executor # https://extensions.gnome.org/extension/2932/executor/
         # gnomeExtensions.pano # wird aktuell nicht unterstützt https://extensions.gnome.org/extension/5278/pano/
-        megatools # command line client for mega.nz
         # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com
+        megatools # command line client for mega.nz
+        pv
         yt-dlp # cli tool to download videos from youtube
+        yubikey-manager # cli tool for configuring any YubiKey over all USB transports
+        yubikey-manager-qt # cross-platform application for configuring any YubiKey over all USB interfaces
+        yubikey-personalization-gui # qt based cross-platform utility designed to facilitate reconfiguration of the Yubikey
     ] ++ (with unstable; [
         flashprint # slicer for flashforge 3d printers
     ]);
