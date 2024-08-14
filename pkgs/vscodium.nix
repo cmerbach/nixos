@@ -289,6 +289,7 @@
                     #  "icon": "issue-closed"
             };
             "excalidraw.theme" = "dark";
+            # "scm.experimental.showHistoryGraph" = true;
         };
         keybindings = [
             # ctrl + ...

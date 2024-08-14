@@ -96,7 +96,7 @@
         epiphany    # web browser
         geary       # email client
         gnome-tour  # simple introduction for gnome
-        seahorse    # password managergnome
+        # seahorse    # password managergnome
         simple-scan # document scanner
         totem       # video player
         yelp        # help viewer

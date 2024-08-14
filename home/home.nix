@@ -161,11 +161,12 @@
             nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
             # git
-            gpp = "git pull --rebase";
             ga = "git add .";
+            gcm = "git checkout main";
             gh = "git rebase -i main";
             gp = "git push --force-with-lease";
             gpm = "git push -o merge_request.create";
+            gpp = "git pull --rebase";
             gr = "git reset --soft HEAD~1";
             gs = "git status";
             # youtube-dl
@@ -236,8 +237,9 @@
             "text/plain" = "org.gnome.TextEditor.desktop";
             "application/x-zerosize" = "org.gnome.TextEditor.desktop";
             "application/pdf" = "org.gnome.Evince.desktop";
-            "image/jpeg" = "nomacs.desktop";
-            "image/png" = "nomacs.desktop";
+            "image/jpeg" = "org.nomacs.ImageLounge.desktop";
+            "image/jpg" = "org.nomacs.ImageLounge.desktop";
+            "image/png" = "org.nomacs.ImageLounge.desktop";
             "video/mp4" = "vlc.desktop";
             "video/mkv" = "vlc.desktop";
         };
