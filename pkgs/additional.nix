@@ -4,6 +4,7 @@
         ansible #  open source it automation engine (automates provisioning, configuration, deployment, orchestration ...)
         arduino # open-source electronics prototyping platform
         blender # 3d creation and animation system
+        flutter # googles sdk for building mobile, web and desktop with dart
         libreoffice # free and open-source office productivity software suite
         parted # create, destroy, resize, check, and copy partitions
         simplescreenrecorder # screen recorder for linux like obs

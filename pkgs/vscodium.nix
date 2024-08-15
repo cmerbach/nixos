@@ -35,6 +35,12 @@
                 sha256 = "yM9Hxuv9sIDq1vz5hcvrNUvZ9gbelhbc80v0++aJgQE=";
             }
             {
+                name = "flutter";
+                publisher = "Dart-Code";
+                version = "3.94.0";
+                sha256 = "16IqWDAePdr5k6bWElCHj7A8RhnMW+BDsEhROXq4isM=";
+            }
+            {
                 name = "terraform";
                 publisher = "HashiCorp";
                 version = "2.30.2024042211";
