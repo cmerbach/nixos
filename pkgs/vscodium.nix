@@ -15,6 +15,7 @@
             ms-python.python
             yzhang.markdown-all-in-one
             ms-kubernetes-tools.vscode-kubernetes-tools
+            asciidoctor.asciidoctor-vscode
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
                 name = "nix-ide";
