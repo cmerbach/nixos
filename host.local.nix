@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 {
     # Define your hostname
-    networking.hostName = "nixos";
+    networking.hostName = "hostname";
 
     users.users.user = {
         packages = with pkgs; [
             # brave
             # skypeforlinux
-            telegram-desktop
+            # telegram-desktop
         ];
     };
 

@@ -1,6 +1,5 @@
-# host.local.nix and flake.lock
-# -> git add --intent-to-add host.local.nix flake.lock
-# -> git update-index --assume-unchanged host.local.nix flake.lock
-# this options will set in the update.sh file
+# host.local.nix and flake.lock -> this options will set in the update.sh file
+# -> git update-index --assume-unchanged --skip-worktree host.local.nix
+# -> git update-index --assume-unchanged --skip-worktree flake.lock
 
 tmp/
