@@ -11,7 +11,7 @@
         gimp # cross-platform image editor
         gnome.dconf-editor # gsettings editor for gnome
         gnome-extension-manager # desktop app for managing GNOME shell extensions - command: extension-manager
-        gnupg # OpenPGP implementation
+        #!!! gnupg # openpgp implementation -> installed in the configuration.nix
         gzip # gnu zip compression program
         htop # cross-platform interactive process viewe
         iftop # cli system monitor toolfor network traffic
@@ -27,7 +27,7 @@
         nomacs # free and open source image viewer
         p7zip # command line tool fork of the free 7-zip archive program for posix platforms
         pdfarranger # python-gtk application to merge or split PDF documents
-        # python3 # universal, interpreted, high-level programming language
+        #!!! python3 # universal, interpreted, high-level programming language
         (python3.withPackages (python-pkgs: [
             python-pkgs.pandas
             python-pkgs.duckdb
