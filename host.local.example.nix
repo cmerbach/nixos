@@ -6,17 +6,17 @@
         packages = with pkgs; [
             # brave
             # skypeforlinux
-            telegram-desktop
+            # telegram-desktop
         ];
     };
 
     # additional programs
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        localNetworkGameTransfers.openFirewall = true;
-    };
+    # programs.steam = {
+    #     enable = true;
+    #     remotePlay.openFirewall = true;
+    #     dedicatedServer.openFirewall = true;
+    #     localNetworkGameTransfers.openFirewall = true;
+    # };
 
     # This value determines the NixOS release (first version of NixOS you have
     # installed on this particular machine) from which the default
