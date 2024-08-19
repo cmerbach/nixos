@@ -9,7 +9,7 @@
 mkdir -p tmp
 
 # download the current version of nixos
-wget https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-x86_64-linux.iso -O tmp/nixos.iso
+wget https://channels.nixos.org/nixos-24.05/latest-nixos-minimal-x86_64-linux.iso -O tmp/nixos.iso
 
 # create the device for install the os
 qemu-img create -f raw tmp/nixos.img 50G
