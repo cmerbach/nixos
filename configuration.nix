@@ -174,7 +174,6 @@
         };
     };
 
-
     # enable YubiKey support
     services.udev.packages = [ pkgs.yubikey-personalization ];
 
@@ -185,13 +184,6 @@
     programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
-    };
-
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        localNetworkGameTransfers.openFirewall = true;
     };
 
     # List services that you want to enable:

@@ -9,7 +9,6 @@
         parted # create, destroy, resize, check, and copy partitions
         simplescreenrecorder # screen recorder for linux like obs
         sshpass # non-interactive ssh password auth
-        #!!! steam # video game digital distribution service and storefrontend -> installed in the configuration.nix
         gnomeExtensions.ddterm # https://extensions.gnome.org/extension/3780/ddterm/
         gnomeExtensions.executor # https://extensions.gnome.org/extension/2932/executor/
         # gnomeExtensions.pano # wird aktuell nicht unterstützt https://extensions.gnome.org/extension/5278/pano/
