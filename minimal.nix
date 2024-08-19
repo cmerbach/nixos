@@ -49,6 +49,6 @@
         alias nrm="git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#minimal'";
     '';
 
-    system.stateVersion = "23.11";
+    system.stateVersion = "24.05";
 
 }
