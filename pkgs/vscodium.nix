@@ -97,7 +97,7 @@
         ];
         userSettings = {
             # ---( Settings )---
-            "editor.rulers" = [80];
+            "editor.rulers" = [33];
             "editor.tabSize" = 4;
             "editor.detectIndentation" = true;
             "editor.insertSpaces" = true;

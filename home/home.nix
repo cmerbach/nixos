@@ -164,7 +164,7 @@
             # nixos
             nr = "git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             nrc = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
-            nu = "git -C  /home/user/nixos/ add . && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
+            nu = "git -C  /home/user/nixos/ add . && rm -f rm /home/user/.config/mimeapps.list && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
             # git
             ga = "git add .";
