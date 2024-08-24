@@ -1,9 +1,23 @@
 { config, pkgs, unstable, ... }:
-{
 
+# let
+#   pinnedVSCodium = pkgs.vscodium.overrideAttrs (oldAttrs: rec {
+#     version = "1.91.1.24193"; 
+#     src = pkgs.fetchFromGitHub {
+#         owner = "VSCodium";
+#         repo = "vscodium";
+#         rev = version; # "1.60.2";
+#         sha256 = "sha256-bGKRYVeupTp+xHpMohbO5x9Pv2FnDV2Cn/NECWkqhts=";
+#     };
+#   });
+# in
+
+{
     programs.vscode = {
         enable = true;
-        package = unstable.vscodium; # pkgs. or unstable. - open source software of vs code
+        # package = pinnedVSCodium;
+        # package = pkgs.vscodium;
+	    package = unstable.vscodium;
         extensions = with pkgs.vscode-extensions; [
             foam.foam-vscode
             github.vscode-pull-request-github
