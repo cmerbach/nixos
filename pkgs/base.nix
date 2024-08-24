@@ -1,8 +1,6 @@
 { config, pkgs, lib, unstable, ... }:
 {
     home.packages = with pkgs; [
-        asciidoc-full # text-based document generation system
-        asciidoctor # a faster asciidoc processor written in ruby
         audacity # audio editing and recording software
         btop # monitor of resources
         busybox # tiny versions of common unixutilities in a single small executable - e.g. killall

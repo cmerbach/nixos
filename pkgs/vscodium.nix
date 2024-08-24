@@ -16,7 +16,7 @@
     programs.vscode = {
         enable = true;
         # package = pinnedVSCodium;
-        # package = pkgs.vscodium;
+        # package = pkgs.vscode;
 	    package = unstable.vscodium;
         extensions = with pkgs.vscode-extensions; [
             foam.foam-vscode
@@ -41,12 +41,6 @@
                 publisher = "pomdtr";
                 version = "3.7.4";
                 sha256 = "hI+Qo8K+gLQuzKkaSq89D8vIxlYq9tMi31DgFiRzx0E=";
-            }
-            {
-                name = "asciidoctor-vscode";
-                publisher = "asciidoctor";
-                version = "3.3.1";
-                sha256 = "UXE7qek0NF4Eq1K9ul+V+v7yckRjj0/trn/Du/5Aw9Y=";
             }
             {
                 name = "sidebar-markdown-notes";
