@@ -14,8 +14,9 @@
         gnomeExtensions.tray-icons-reloaded # https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
         # gnomeExtensions.pano # wird aktuell nicht unterstützt https://extensions.gnome.org/extension/5278/pano/
         # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com
+        gnome.zenity # tool to display gui dialogs from the commandline and shell scripts
         megatools # command line client for mega.nz
-        pv
+        pv #Tool for monitoring the progress of data through a pipeline
         yt-dlp # cli tool to download videos from youtube
         yubikey-manager # cli tool for configuring any YubiKey over all USB transports
         yubikey-manager-qt # cross-platform application for configuring any YubiKey over all USB interfaces

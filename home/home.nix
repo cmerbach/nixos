@@ -111,42 +111,48 @@
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
                 "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
+                "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/"
             ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
             name = "gnome-terminal";
             command = "kgx";
-            binding = "<Ctrl><ALT>t";
+            binding = "<Ctrl><ALT>T";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
             name = "vivaldi";
             command = "vivaldi";
-            binding = "<SHIFT><Ctrl><ALT>b";
+            binding = "<SHIFT><Ctrl><ALT>B";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-            name = "flameshot";
-            command = "flameshot gui";
-            binding = "<SHIFT><Ctrl><ALT>f";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
             name = "open nixos package webside";
             command = "vivaldi https://search.nixos.org/packages";
-            binding = "<SHIFT><Ctrl><ALT>P";
+            binding = "<SHIFT><Ctrl><ALT>N";
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
             name = "open chatgpt webside";
             command = "vivaldi https://chatgpt.com/";
             binding = "<SHIFT><Ctrl><ALT>G";
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-            name = "open nixos package webside";
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+            name = "jdownloader";
             command = "java -jar /home/user/.jdownloader2/JDownloader.jar";
             binding = "<SHIFT><Ctrl><ALT>J";
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
             name = "open steam";
             command = "steam";
             binding = "<SHIFT><Ctrl><ALT>S";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+            name = "flameshot";
+            command = "flameshot gui";
+            binding = "<SHIFT><Ctrl><ALT>f";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
+            name = "call function to bind storage";
+            command = "/run/current-system/sw/bin/bash -c 'bash -i -c \"bindstorage\"'";
+            binding = "<SHIFT><Ctrl><ALT>P";
         };
     };
 
@@ -196,6 +202,24 @@
                 printf '%s(%s): ' "$type" "$user_scope";
                 read -r commit_message;
                 git commit -m "$type($user_scope): $commit_message";
+            };
+            bindstorage () {
+                #! /usr/bin/env -S nix shell nixpkgs#bash nixpkgs#cryptsetup nixpkgs#gnome.zenity --command bash
+                PATH_STORAGE=~/loeschen/storage.img
+
+                SUDO_PASS=$(zenity --password --title="Sudo Password")
+
+                if echo $SUDO_PASS | sudo -S cryptsetup status storage | grep -q "is inactive"; then
+                    echo $SUDO_PASS | sudo -S mkdir -p /mnt/storage
+                    STORAGE_PASS=$(zenity --password --title="LUKS Password")
+                    printf "$STORAGE_PASS" | sudo -S cryptsetup luksOpen $PATH_STORAGE storage --key-file=-
+                    echo $SUDO_PASS | sudo -S mount /dev/mapper/storage /mnt/storage
+                    echo "file:///mnt/storage" > ~/.config/gtk-3.0/bookmarks
+                else
+                    echo $SUDO_PASS | sudo -S umount /mnt/storage
+                    echo $SUDO_PASS | sudo -S cryptsetup luksClose storage
+                    rm ~/.config/gtk-3.0/bookmarks
+                fi
             };
 
         '';
