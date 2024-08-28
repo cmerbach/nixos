@@ -12,10 +12,13 @@ ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_github && cat ~/.ssh/id_github.pub
 
 # create a local host file
 # https://discourse.nixos.org/t/can-i-use-flakes-within-a-git-repo-without-committing-flake-nix/18196
-cp host.local.example.nix host.local.nix
 cp flake.example.lock flake.lock
-git add --intent-to-add host.local.nix flake.lock
-git update-index --assume-unchanged host.local.nix flake.lock
+git add --intent-to-add flake.lock config/
+git update-index --assume-unchanged flake.lock config/
+
+# other files
+git add --intent-to-add config/aws-config.txt config/additional-pkgs.nix config/hostName.nix config/stateVersion.nix
+git update-index --assume-unchanged config/aws-config.txt config/additional-pkgs.nix config/hostName.nix config/stateVersion.nix
 
 # change the disko.nix file after reload
 device=$(lsblk | grep -B 2 "/boot$" | head -n1 | cut -d' ' -f1)
