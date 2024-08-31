@@ -213,6 +213,7 @@
                     STORAGE_PASS=$(zenity --password --title="LUKS Password")
                     printf "$STORAGE_PASS" | sudo -S cryptsetup luksOpen $PATH_STORAGE storage --key-file=-
                     echo $SUDO_PASS | sudo -S mount /dev/mapper/storage /mnt/storage
+                    sed -i "/file:\/\/\/mnt\/storage/d" ~/.config/gtk-3.0/bookmarks
                     echo "file:///mnt/storage" >> ~/.config/gtk-3.0/bookmarks
                 else
                     echo $SUDO_PASS | sudo -S umount /mnt/storage
