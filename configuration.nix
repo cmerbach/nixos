@@ -7,7 +7,7 @@
 {
     imports = [
         # Include the results of the hardware scan
-        ./config/additional-pkgs.nix
+        ./config/host.nix
         ./pkgs/virtualization.nix
     ];
 

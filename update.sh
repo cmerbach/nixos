@@ -17,8 +17,8 @@ git add --intent-to-add flake.lock config/
 git update-index --assume-unchanged flake.lock config/
 
 # other files
-git add --intent-to-add config/aws-config.txt config/additional-pkgs.nix config/hostName.nix config/stateVersion.nix
-git update-index --assume-unchanged config/aws-config.txt config/additional-pkgs.nix config/hostName.nix config/stateVersion.nix
+git add --intent-to-add config/aws-config.txt config/host.nix config/hostName.nix config/stateVersion.nix
+git update-index --assume-unchanged config/aws-config.txt config/host.nix config/hostName.nix config/stateVersion.nix
 
 # change the disko.nix file after reload
 device=$(lsblk | grep -B 2 "/boot$" | head -n1 | cut -d' ' -f1)

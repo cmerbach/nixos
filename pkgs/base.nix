@@ -3,7 +3,6 @@
     home.packages = with pkgs; [
         audacity # audio editing and recording software
         btop # monitor of resources
-        busybox # tiny versions of common unixutilities in a single small executable - e.g. killall
         curl # cli tool for transferring data using various network protocols
         ffmpeg # free and open-source software consisting of a suite of libraries for video, audio, and other multimedia files
         flameshot # free and open-source tool to take screenshots with many built-in features 
