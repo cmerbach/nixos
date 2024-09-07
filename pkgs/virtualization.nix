@@ -9,6 +9,15 @@
         };
     };
 
+    # security.wrappers = {
+    #     docker-rootlesskit = {
+    #         owner = "root";
+    #         group = "root";
+    #         capabilities = "cap_net_bind_service+ep";
+    #         source = "${pkgs.rootlesskit}/bin/rootlesskit";
+    #     };
+    # };
+
     # virtualisation.docker.daemon.settings = {
     #     data-root = "/some-place/to-store-the-docker-data";
     # };
