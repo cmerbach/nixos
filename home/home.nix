@@ -68,6 +68,8 @@
                 "executor@raujonas.github.io"
                 "ddterm@amezin.github.com"
                 "trayIconsReloaded@selfmade.pl"
+                "tiling-assistant@leleat-on-github"
+                "docker@stickman_0x00.com"
                 # "pano@elhan.io" 
                 # "forge@jmmaranan.com"
             ];

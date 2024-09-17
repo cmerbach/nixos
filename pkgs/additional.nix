@@ -10,7 +10,9 @@
         simplescreenrecorder # screen recorder for linux like obs
         sshpass # non-interactive ssh password auth
         gnomeExtensions.ddterm # https://extensions.gnome.org/extension/3780/ddterm/
+        gnomeExtensions.docker # https://extensions.gnome.org/extension/5103/docker/
         gnomeExtensions.executor # https://extensions.gnome.org/extension/2932/executor/
+        gnomeExtensions.tiling-assistant # https://extensions.gnome.org/extension/3733/tiling-assistant/
         gnomeExtensions.tray-icons-reloaded # https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
         # gnomeExtensions.pano # wird aktuell nicht unterstützt https://extensions.gnome.org/extension/5278/pano/
         # gnomeExtensions.forge # https://extensions.gnome.org/extension/4481/forge/?ref=news.itsfoss.com
