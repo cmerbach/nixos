@@ -70,7 +70,8 @@
                 "trayIconsReloaded@selfmade.pl"
                 "tiling-assistant@leleat-on-github"
                 "docker@stickman_0x00.com"
-                # "pano@elhan.io" 
+                "clipboard-indicator@tudmotu.com"
+                "window-thumbnails@G-dH.github.com"
                 # "forge@jmmaranan.com"
             ];
             favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "vivaldi-stable.desktop" "codium.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
@@ -98,10 +99,10 @@
             shortcut-background-opacity-inc = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><SHIFT>plus"]);
             shortcut-background-opacity-dec = (lib.hm.gvariant.mkArray lib.hm.gvariant.type.string ["<Control><SHIFT>-"]);
         };
-        # "org/gnome/shell/extensions/pano" = {
-        #     play-audio-on-copy = false;
-        #     send-notification-on-copy = false;
-        # };
+# "org/gnome/shell/extensions/pano" = { # using for windows thunbnails setings
+#     play-audio-on-copy = false;
+#     send-notification-on-copy = false;
+# };
         # custom keybindings shortcuts
         "org/gnome/settings-daemon/plugins/media-keys" = {
             custom-keybindings = [
