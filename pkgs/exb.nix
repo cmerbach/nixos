@@ -4,6 +4,7 @@
         asdf # manage all your runtime versions with one tool
         apache-directory-studio # LDAP browser and directory client
         awscli2 # unified tool to manage your aws services
+        cdrkit # portable command-line cd/dvd recorder software, mostly compatible with cdrtools
         ctop # top-like interface for container metrics
         direnv # shell extension that manages your environment
         docker # build, share, and run container applications
