@@ -25,6 +25,7 @@
             libgcc # GNU compiler collection
             tflint # terraform linter
         rustdesk # remote access and remote control software
+        syslinux # a lightweight bootloader
         terraform #  infrastructure as code tool
         texliveFull # latex
         vagrant # create and configure lightweight, reproducible, and portable development environments
