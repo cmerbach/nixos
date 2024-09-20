@@ -196,6 +196,13 @@
                             "icon" = "codicon-folder";
                             "accent" = "#37ff6b";
                         }
+                        {
+                            "id" = "88cd8978-13f1-4f37-bb9c-8dcedd6713c9";
+                            "name" = "linuxmint-unattended";
+                            "path" = "file:///home/user/repos/linuxmint-unattended";
+                            "icon" = "codicon-folder";
+                            "accent" = "#228b22";
+                        }
                     ];
                 }
             ];
