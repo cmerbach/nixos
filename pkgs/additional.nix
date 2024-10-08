@@ -21,6 +21,15 @@
         gnome.zenity # tool to display gui dialogs from the commandline and shell scripts
         megatools # command line client for mega.nz
         pv #Tool for monitoring the progress of data through a pipeline
+        yazi # fast terminal file manager written in rust, based on async I/O
+        file # program that shows the type of files
+            ffmpegthumbnailer # lightweight video thumbnailer
+            poppler # pdf rendering library
+            fd # simple, fast and user-friendly alternative to find
+            fzf # cli fuzzy finder written in Go
+            zoxide # fast cd command that learns your habits
+            imagemagick # software suite to create, edit, compose, or convert bitmap images
+            xclip # tool to access the x clipboard from a console application
         yt-dlp # cli tool to download videos from youtube
         yubikey-manager # cli tool for configuring any YubiKey over all USB transports
         yubikey-manager-qt # cross-platform application for configuring any YubiKey over all USB interfaces

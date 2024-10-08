@@ -86,6 +86,7 @@
             center-index = 0;
             right-active = true;
             right-index = 0;
+# right-commands-json = '{"commands":[{"isActive":true,"command":"df -h / | awk 'NR==2 {print $4 \"/\" $2}'","interval":10,"uuid":"573d8cec-43fe-412f-a221-b1193150b82f"}]}';
         };
         "com/github/amezin/ddterm" = {
             window-position = "top";
@@ -215,7 +216,7 @@
                     echo $SUDO_PASS | sudo -S mkdir -p /mnt/storage
                     STORAGE_PASS=$(zenity --password --title="LUKS Password")
                     printf "$STORAGE_PASS" | sudo -S cryptsetup luksOpen $PATH_STORAGE storage --key-file=-
-                    echo $SUDO_PASS | sudo -S mount /dev/mapper/storage /mnt/storage
+                    echo $SUDO_PASS | sudo -S mount -o rw /dev/mapper/storage /mnt/storage
                     sed -i "/file:\/\/\/mnt\/storage/d" ~/.config/gtk-3.0/bookmarks
                     echo "file:///mnt/storage" >> ~/.config/gtk-3.0/bookmarks
                 else
