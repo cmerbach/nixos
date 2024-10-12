@@ -18,7 +18,11 @@
         lib = nixpkgs.lib;
         system = "x86_64-linux";
         # Info: https://discourse.nixos.org/t/how-to-allow-unfree-for-unstable-packages/43600/4
-        unstable = import nixpkgs-unstable {inherit system; config.allowUnfree = true; };
+        unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+            config.android_sdk.accept_license = true; 
+        };
     in {
         nixosConfigurations.full = lib.nixosSystem {
             inherit system;

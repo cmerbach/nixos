@@ -13,7 +13,7 @@
         gzip # gnu zip compression program
         htop # cross-platform interactive process viewe
         iftop # cli system monitor toolfor network traffic
-        jdk21 # java currently-supported LTS version of OpenJDK
+        jdk19 # java currently-supported LTS version of OpenJDK
         kdenlive # free and open source cross-platform video editing program
         libvirt # toolkit to interact with the virtualization capabilities of linux
         lorien # infinite canvas drawing/note-taking app

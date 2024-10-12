@@ -16,6 +16,7 @@
     # enable unfree software
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowBroken = true;
+    nixpkgs.config.android_sdk.accept_license = true; 
     # enable all firmware regardless of license
     hardware.enableAllFirmware = true;
     # allow insecure software
@@ -138,15 +139,17 @@
         description = "user"; # managed by home-manager
         hashedPassword = "$6$U3SyXldxX47qXKo9$7IUNCifC7iZp7O6ldKA6gbMtsIuTG0XG0EBKErBD.uURbZ4fbqUgni0SbzlgXXP4phTJuDlh5VEki0HmHwxYs/"; # mkpasswd --method=SHA-512 --stdin
         extraGroups = [
+            "adbusers"
             "dialout" # arduino permission for /dev/ttyUSB0
             "docker"
+            "kvm"
             "libvirtd"
             "networkmanager"
             "wheel" # enables 'sudo' for the user
         ]; 
-        #packages = with pkgs; [
+        # packages = with pkgs; [
         #    firefox
-        #];
+        # ];
     };
 
     # List packages installed in system profile. To search, run:
@@ -177,8 +180,11 @@
         };
     };
 
-    # enable YubiKey support
-    services.udev.packages = [ pkgs.yubikey-personalization ];
+    # enable YubiKey support and also for Android SDK
+    services.udev.packages = with pkgs; [ 
+        yubikey-personalization
+        android-udev-rules
+    ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
@@ -188,6 +194,9 @@
         enable = true;
         enableSSHSupport = true;
     };
+
+    # settings for Android SDK
+    programs.adb.enable = true;
 
     # List services that you want to enable:
 

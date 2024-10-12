@@ -1,6 +1,14 @@
 { config, pkgs, lib, unstable, ... }:
 {
     home.packages = with pkgs; [
+        android-studio # official ide for android
+        # https://nixos.org/manual/nixpkgs/unstable/#using-androidenv-with-android-studio
+        (pkgs.androidenv.composeAndroidPackages { 
+            cmdLineToolsVersion = "8.0";
+            toolsVersion = "26.1.1";
+            platformToolsVersion = "33.0.3";
+            buildToolsVersions = [ "33.0.3" ];
+        }).androidsdk
         ansible #  open source it automation engine (automates provisioning, configuration, deployment, orchestration ...)
         arduino # open-source electronics prototyping platform
         blender # 3d creation and animation system
@@ -34,7 +42,9 @@
         yubikey-manager # cli tool for configuring any YubiKey over all USB transports
         yubikey-manager-qt # cross-platform application for configuring any YubiKey over all USB interfaces
         yubikey-personalization-gui # qt based cross-platform utility designed to facilitate reconfiguration of the Yubikey
+        # androidStudioPackages.dev
     ] ++ (with unstable; [
         flashprint # slicer for flashforge 3d printers
     ]);
+
 }
