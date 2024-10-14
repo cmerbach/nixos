@@ -22,7 +22,7 @@
         ../pkgs/additional.nix
         ../pkgs/base.nix
         ../pkgs/exb.nix
-        ../pkgs/vscodium.nix
+        ../pkgs/vscode.nix
     ];
 
     home.packages = with pkgs; [
@@ -74,7 +74,7 @@
                 "window-thumbnails@G-dH.github.com"
                 # "forge@jmmaranan.com"
             ];
-            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "vivaldi-stable.desktop" "codium.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
+            favorite-apps = [ "nautilus.desktop" "org.gnome.Console.desktop" "vivaldi-stable.desktop" "code.desktop" "thunderbird.desktop" "slack.desktop" "lorien.desktop" "FlashPrint5.desktop" ];
         };
         # settings for the individual gnome extensions
         # info: https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
@@ -166,13 +166,16 @@
 
         # set some aliases
         shellAliases = {
+            # basis
+            ll = "ls -al";
             # docker
+            dca = "docker container ls -a";
+            drm = "docker container rm -f";
             nn = "docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n";
             # kubectl
             kx = "kubectx";
             # nixos
             nr = "git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
-            nrc = "rm -rf /home/user/.vscode-oss && git -C /home/user/nixos/ add . && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             nu = "git -C  /home/user/nixos/ add . && rm -f rm /home/user/.config/mimeapps.list && sudo nix flake update '/home/user/nixos' && sudo nixos-rebuild switch --flake '/home/user/nixos/#full' && source /home/user/.bashrc";
             ng = "sudo nix-collect-garbage -d";
             # git

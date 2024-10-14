@@ -1,0 +1,26 @@
+{
+  "image": "android:default",
+  // "build": { 
+  //       "context": "..",
+  //       "dockerfile": "Dockerfile",
+  // },
+  // "remoteUser": "user",
+  "runArgs": [
+    "--device=/dev/kvm",
+    "--env=DISPLAY=${localEnv:DISPLAY}",
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+    "--volume=${localEnv:PWD}/test:/project",
+    "--name=my-app"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-dockerr",
+        "Dart-Code.flutter",
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+  "postAttachCommand": "bash -i -c 'emulator -avd Pixel_8_Pro_API_35 -gpu host &'",
+  "shutdownAction": "stopContainer"
+}

@@ -15,9 +15,10 @@
 {
     programs.vscode = {
         enable = true;
+        package = pkgs.vscode;
         # package = pinnedVSCodium;
-        # package = pkgs.vscode;
-	    package = unstable.vscodium;
+        # package = pkgs.vscodium;
+        # package = unstable.vscodium;
         extensions = with pkgs.vscode-extensions; [
             foam.foam-vscode
             github.vscode-pull-request-github
@@ -29,6 +30,8 @@
             ms-python.python
             yzhang.markdown-all-in-one
             ms-kubernetes-tools.vscode-kubernetes-tools
+            ms-vscode-remote.remote-containers
+            ms-azuretools.vscode-docker
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
                 name = "nix-ide";
@@ -317,6 +320,7 @@
             };
             "excalidraw.theme" = "dark";
             # "scm.experimental.showHistoryGraph" = true;
+            "remote.autoForwardPortsSource" = "hybrid";
         };
         keybindings = [
             # ctrl + ...

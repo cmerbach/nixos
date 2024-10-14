@@ -42,7 +42,7 @@
         yubikey-manager # cli tool for configuring any YubiKey over all USB transports
         yubikey-manager-qt # cross-platform application for configuring any YubiKey over all USB interfaces
         yubikey-personalization-gui # qt based cross-platform utility designed to facilitate reconfiguration of the Yubikey
-        # androidStudioPackages.dev
+        xorg.xhost # used to add and delete host names or user names to the list allowed to make connections to the X server
     ] ++ (with unstable; [
         flashprint # slicer for flashforge 3d printers
     ]);
