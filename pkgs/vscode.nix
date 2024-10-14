@@ -16,6 +16,7 @@
     programs.vscode = {
         enable = true;
         package = pkgs.vscode;
+        # package = unstable.vscode;
         # package = pinnedVSCodium;
         # package = pkgs.vscodium;
         # package = unstable.vscodium;
